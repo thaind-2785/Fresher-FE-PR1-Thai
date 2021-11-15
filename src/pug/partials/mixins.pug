@@ -1,0 +1,193 @@
+mixin productItem(itemType, imgSrc, itemName, itemPrice, itemOldPrice)
+	li(class="product__item col col-12 col-sm-6 col-lg-3")&attributes(attributes)
+		.product__item-wrap
+			.border-right 
+			.border-left
+			.product__item-thumbnail.position-relative
+				if (itemType)
+					case itemType
+						when "hot"
+							+hotLabel
+						when "new"
+							+newLabel
+						default
+							+saleLabel
+				a.item-link.d-block
+					img(class="item-img" src=imgSrc alt=itemName)
+				.item-option
+					a(href="javacript:void(0)")
+						i(class="fas fa-heart")
+						span Yêu thích 
+					a(href="javacript:void(0)")
+						i(class="far fa-chart-bar")
+						span So sánh 
+					a(href="javacript:void(0)")
+						i(class="fas fa-compress-alt")
+			.product__item-info
+				a.item-name(href="javacript:void(0)")= itemName
+				div 
+					span.item-price= itemPrice
+					span.item-old-price= itemOldPrice
+			.product__addto-cart 
+				+addCartBtn
+
+mixin listProduct(list)
+	ul.row.g-5
+		each val in list 
+			+productItem(val.type, val.img, val.name, val.price, val.oldPrice)
+			
+mixin addCartBtn 
+	button.btn.btn-addto-card ADD TO CART
+
+mixin saleLabel 
+	.item-type.position-absolute
+		img(src="./assets/img/label/sale-label.png", alt="label")
+
+mixin hotLabel 
+	.item-type.position-absolute
+		img(src="./assets/img/label/hot-label.png", alt="label")
+
+mixin newLabel 
+	.item-type.position-absolute
+		img(src="./assets/img/label/new-label.png", alt="label")
+
+mixin specialItem
+	.special-img.col-12
+		figure 
+			img(src="/assets/img/special-product.jpg", alt="ruou nho")
+	.special-content.col-10.d-flex.justify-content-center
+		.special-thumbnail
+			a.special-link.d-block(href="product-detail.html") 
+				figure 
+					img(src="/assets/img/special.jpg", alt="ruou nho")
+				.special-label
+					img(src="/assets/img/label.png", alt="label")
+		.special-info
+			.special-name 
+				h2 RƯỢU NHO NĂM 1987
+			.special-decorate 
+				img(src="/assets/img/special-decorate.png", alt="decorate")
+			.special-price 
+				span 330.000đ
+			.special-btn 
+				+addCartBtn
+			.special-desc 
+				p Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+			.special-time 
+				.time-item.day
+					span 334
+					span NGÀY
+				.time-item.hour
+					span 26
+					span GIỜ
+				.time-item.minute
+					span 60
+					span PHÚT
+				.time-item.second
+					span 15
+					span GIÂY
+
+mixin subNavItem(text)
+	li.header-sub-item
+		a(href="products.html")= text
+					
+mixin userNavItem(text, state)
+	li.user-item 
+		case text 
+			when "Giỏ hàng"
+				a.user-link(href="cart.html")= text
+			when "Trạng thái đơn hàng"
+				a.user-link(href="orders.html")= text
+			when "Đăng nhập"
+				a.user-link(href="login.html")= text
+			when "Đăng ký"
+				a.user-link(href="register.html")= text
+			default 
+				a.user-link(href="javascript:void(0)")= text
+
+mixin dropDownList(list)
+	ul.header-subnav-list
+		each val in list
+			+subNavItem(val)
+
+mixin bannerItem(url, val)
+	.col-lg-3.col-6 
+		img(src=url, alt="banners-" + val)
+
+mixin dots
+	.dots
+		.dot.active
+		.dot 
+		.dot
+
+mixin newsItem(title, author, date, comments, desc, img)
+	.news-item 
+		a.news-img.d-block(href="news.html") 
+			img(src=img, alt="news")
+			div
+				i(class="fas fa-link")
+		h2= title
+		div 
+			span= 'Đăng bởi ' + author
+			span= date
+			span= comments + ' bình luận'
+		p= desc 
+		a.readmore(href="news.html") Read more 
+
+mixin newsList(list)
+	.news-list.row
+		each val in list 
+			+newsItem(val.title, val.author, val.date, val.comments, val.desc, val.img)
+
+mixin commentItem 
+	.comment-item
+		.comment-icon
+			img(src="/assets/img/comment-icon.png", alt="comment-icon")
+		p Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long ...
+		a.readmore.d-block(href="javascript:void(0)") Read more 
+		.comment-author
+			.author-img 
+				img(src="/assets/img/customer/customer1.jpg", alt="avatar")
+			span.author-name GIANGLE
+			span.author-job Graphic Design
+
+mixin sectionHeader(header)
+	.section-header 
+		h2= header
+	.section-decorate 
+		img(src="/assets/img/special-decorate.png", alt="decorate")
+
+mixin categoryList(list)
+	ul
+		each val in list
+			if val.isActive 
+				li.active
+					i(class="fas fa-circle")
+					a(href="product.html")= val.name 
+					span= '(' + val.quantity + ')'
+			else 
+				li 
+					a(href="product.html")= val.name 
+					span= '(' + val.quantity + ')'
+
+mixin pagination
+	nav(aria-label="navigation")
+		ul.pagination
+			li.page-item
+				a(class="page-link" href="#" aria-label="Previous")
+					span(aria-hidden="true")
+						i(class="fas fa-caret-left")
+			li.page-item
+				a(class="page-link" href="#") 1
+			li.page-item
+				a.active(class="page-link" href="#") 2
+			li.page-item
+				a(class="page-link" href="#") 3
+			li.page-item
+				a(class="page-link" href="#") 4
+			li.page-item
+				a(class="page-link" href="#") 5
+			li.page-item
+				a(class="page-link" href="#" aria-label="Previous")
+					span(aria-hidden="true")
+						i(class="fas fa-caret-right")

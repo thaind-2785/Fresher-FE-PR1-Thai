@@ -1,0 +1,50 @@
+extends ../layouts/layout
+
+block content
+	.main-products 
+		section.direction
+			nav.direction-nav 
+				ul.direction-list
+					li.direction-item 
+						a(href="index.html") Trang chủ
+						span /
+					li.direction-item 
+						a(href="products.html") Sản phẩm
+						span /
+					li.direction-item.active
+						a(href="products.html") Rượu vang đỏ
+		section.products-banners 
+			img.w-100(src="/assets/img/products-banners.jpg", alt="products-banner") 
+		section.products-content.row.g-5
+			.products-category.col-sm-4.col-8.col-lg-3.d-sm-block(class="collapse" id="category")
+				.close-category 
+					a(data-bs-toggle="collapse" href="#category" role="button" aria-expanded="false" aria-controls="category")
+						i(class="fas fa-times-circle")
+				+sectionHeader('DANH MỤC SẢN PHẨM')
+				nav 
+					ul 
+						li RƯỢU NGOẠI 
+							+categoryList(ruouNgoai)
+						li RƯỢU VANG 
+							+categoryList(ruouVang)
+				+sectionHeader('SO SÁNH SẢN PHẨM')
+				.category-compare Bạn chưa có sản phẩm để so sánh
+				+sectionHeader('TAG SẢN PHẨM')
+				.category-tags 
+					each val in tagsProducts
+						span= val
+				.category-banners 
+					img.w-100(src="/assets/img/products-category.png", alt="category-banner")
+			.products-list.col-lg-9.col-12.col-sm-8
+				.products-wrap 
+					block productContent 
+						.products-pagination
+							.menu-category 
+								a(data-bs-toggle="collapse" href="#category" role="button" aria-expanded="false" aria-controls="category")
+									i(class="fas fa-bars")
+							.pagination-direction
+								a.active(href="products.html")
+									i(class="fas fa-th") 
+								a(href="products-vertical.html")
+									i(class="fas fa-list")
+							+pagination
