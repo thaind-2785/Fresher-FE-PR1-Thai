@@ -1,0 +1,326 @@
+
+.header-user{
+	background-color: rgba(255, 255, 255, 0.1);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999999;
+	.header-wrap{
+		max-width: 1200px;
+		margin: 0 auto;
+		@include flexbox;
+		@include justify-content(space-between);
+		.user-nav{
+			position: relative;
+			.user-menu{
+				display: none;
+				i{
+					font-size: 3.2rem;
+					padding: 4px 20px;
+					color: $textColor;
+					@include transform(translateY(-7px));
+				}
+				@include Responsive(MD){
+					display: block;
+				}
+				&:hover + .user-list{
+					@include display-flex;
+				}
+			}
+			.user-list{
+				@include flexbox;
+				margin: 0;
+				.user-item{
+					&:not(:first-child) a::before{
+						content: '';
+						position: absolute;
+						width: 6px;
+						border-bottom: 2px solid $textColor;
+						bottom: 50%;
+						left: -3px
+					}
+					.user-link{
+						font-size: 1.2rem;
+						color: $textColor;
+						display: block;
+						padding: 8px 15px;
+						position: relative;
+						&:hover{
+							color: $textHoverColor
+						}
+						@include Responsive(MD){
+							font-size: 1.6rem
+						}
+					}
+				}
+				@include Responsive(MD){
+					position: absolute;
+					top: 100%;
+					left: 0;
+					background-color: white;
+					z-index: 10;
+					flex-direction: column;
+					align-items: flex-start;
+					background-color: white;
+					width: 200px;
+					border: 1px solid $textHoverColor;
+					&::before{
+						content: '';
+						width: 100%;
+						height: 10px;
+						position: absolute;
+						top: -10px;
+						left: 0;
+					}
+					.user-link::before{
+						display: none;
+					}
+				}
+			}
+			.user-search{
+				@include flexbox;
+				margin: 0;
+				.search{
+					font-size: 1.2rem;
+					margin-right: 30px;
+					input{
+						border: none;
+						font-style: italic;
+						font-weight: 700;
+						width: 200px;
+						border-left: 1px solid $textColor;
+						padding-left: 10px;
+						background-color: transparent;
+						@include Responsive(MD){
+							font-size: 1.6rem;
+						}
+						@include Responsive(SM){
+							font-size: 1.8rem;
+						}
+					}
+				}
+				.icon{
+					padding: 0px 15px;
+					font-size: 1.4rem;
+					color: $textColor;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	@include Responsive(MD){
+		position: unset;
+		.user-nav:first-child .user-list{
+			display: none;
+		}
+		.header-wrap{
+			height: 40px;
+		}
+		.user-search .icon{
+			font-size: 2.2rem !important;
+		}
+		.user-nav:first-child .user-list:hover{
+			@include display-flex
+		}
+	}
+}
+
+header{
+	background-color: black;
+	height: 150px;
+	@include flexbox;
+	@include Responsive(MD){
+		height: 100px;
+	}
+	.header-wrap{
+		width: 100%;
+		max-width: 1200px;
+		height: 100%;
+		&>div{
+			padding: 0 15px;
+		}
+		.navbar-toggler{
+			@include Responsive(SM){
+				display: block;
+			}
+		}
+		.navbar-collapse{
+			@include Responsive(SM){
+				background-color: white;
+				z-index: 10;
+				position: absolute;
+				top: 100%;
+				width: 80vw;
+				left: 50%;
+				@include transform(translateX(-50%));
+				display: none!important;
+			}
+			&.show{
+				display: flex !important;
+				display: -webkit-box !important;
+				display: -ms-flexbox !important;
+			}
+		}
+		.navbar-brand{
+			padding: 0 15px;
+			@include Responsive(LTAB){
+				display: none;
+			}
+			@include Responsive(SM){
+				height: 100%;
+				.logo{
+					height: 100%;
+					width: 140px;
+					img{display: none;}
+					div{
+						@include transform(translateY(-50%));
+					}
+				}
+			}
+		}
+		button{
+			span{
+				font-size: 4rem;
+				color: white;
+				@include flexbox
+			}
+		}
+	}
+	.logo{
+		position: relative;
+		div{
+			position: absolute;
+			top: 50%;
+			@include transform(translateY(-25%));
+			@include flexbox;
+			@include flex-direction(column);
+			width: 100%;
+			span{
+				color: $textHoverColor;
+			}
+			span:first-child{
+				font-family: 'utm-alpine-kt';
+				font-size: 2.9rem;
+				line-height: 1;
+			}
+			span:last-child{
+				font-size: 1.6rem;
+			}
+		}
+	}
+	.navbar-nav{
+		margin-left: 60px;
+		width: 100%;
+		@include justify-content(space-between);
+		@include Responsive(MD){
+			margin-left: 0;
+		}
+		@include Responsive(SM){
+			flex-direction: column !important;
+			-webkit-box-orient: vertical !important;
+			-webkit-box-direction: normal !important;
+			-ms-flex-direction: column !important;
+			border: 1px solid $textHoverColor;
+		}
+		.nav-item{
+			text-align: center;
+			&:hover .nav-link{
+				color: $textHoverColor;
+			}
+			.nav-link{
+				font-size: 1.3rem;
+				color: $textNavColor;
+			}
+			@include Responsive(SM){
+				margin-bottom: 10px;
+				&:first-child{
+					margin-top: 10px;
+				}
+				.nav-link{
+					color: $textColor;
+					font-size: 1.6rem;
+				}
+			}
+			.dropdown-menu{
+				@include align-items(flex-start);
+				width: 945px;
+				border: 1px solid #e6ae48;
+				top: calc(100% + 59px);
+				left: -143px;
+				padding-top: 20px;
+				&.show{
+					@include display-flex;
+				}
+				&::before{
+					content: '';
+					border-width: 10px;
+					border-style: solid;
+					border-color: transparent transparent $textHoverColor transparent;
+					position: absolute;
+					bottom: 100%;
+					left: 20%;
+				}
+				@include Responsive(XS){
+					@include flex-direction(column);
+					.dropdown-item{
+						text-align: center;
+					}
+				}
+				.dropdown-item{
+					padding: 15px;
+					@include flex(1);
+					&:last-child{
+						@include flex(2);
+					}
+					h2{
+						font-size: 1.4rem;
+						margin-bottom: 16px;
+						font-weight: 700;
+					}
+					img{
+						width: 100%;
+					}
+					ul{
+						.header-sub-item{
+							margin-bottom: 16px;
+							font-size: 1.4rem;
+							a{
+								color: $textColor;
+							}
+							&:hover a{
+								color: $textHoverColor;
+							}
+							@include Responsive(SM){
+								margin-bottom: 20px;
+								font-size: 1.7rem;
+							}
+						}
+					}
+				}
+				@include Responsive(XL){
+					width: 70vw;
+					left: -10vw;
+				}
+				@include Responsive(SM){
+					@include flexwrap(wrap);
+					width: 80vw;
+					left: -1px;
+					position: absolute;
+					top: unset;
+					&::before, .dropdown-item:last-child{
+						display: none;
+					}
+				}
+				@include Responsive(LTAB){
+					width: 90vw;
+					left: -10vw;
+					top: calc(100% + 36px);
+					&::before{
+						left: 16%;
+					}
+				}
+			}
+		}
+	}
+}

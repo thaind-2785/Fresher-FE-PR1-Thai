@@ -1,0 +1,152 @@
+mixin ProductItem(itemType, imgSrc, itemName, itemPrice, itemOldPrice)
+	li(class="product__item col col-12 col-sm-6 col-lg-3")&attributes(attributes)
+		.product__item-wrap
+			.border-right 
+			.border-left
+			.product__item-thumbnail.position-relative
+				if (itemType)
+					case itemType
+						when "hot"
+							+HotLable
+						when "new"
+							+NewLable
+						default
+							+SaleLable
+				a.item-link.d-block
+					img(class="item-img" src=imgSrc alt="hinhanh")
+				.item-option
+					a(href="javacript:void(0)")
+						i(class="fas fa-heart")
+						span Yêu thích 
+					a(href="javacript:void(0)")
+						i(class="far fa-chart-bar")
+						span So sánh 
+					a(href="javacript:void(0)")
+						i(class="fas fa-compress-alt")
+			.product__item-info
+				a.item-name(href="javacript:void(0)")= itemName
+				div 
+					span.item-price= itemPrice
+					span.item-old-price= itemOldPrice
+			.product__addto-cart 
+				+AddCartBtn
+
+mixin ListProduct(list)
+	ul.row.g-5
+		each val in list 
+			+ProductItem(val.type, val.img, val.name, val.price, val.oldPrice)
+			
+mixin AddCartBtn 
+	button.btn.btn-addto-card ADD TO CART
+
+mixin SaleLable 
+	div.item-type.position-absolute
+		img(src="./assets/img/lable/sale-lable.png", alt="hinhanh")
+
+mixin HotLable 
+	div.item-type.position-absolute
+		img(src="./assets/img/lable/hot-lable.png", alt="hinhanh")
+
+mixin NewLable 
+	div.item-type.position-absolute
+		img(src="./assets/img/lable/new-lable.png", alt="hinhanh")
+
+mixin SpecialItem
+	.special-img.col-12
+		figure 
+			img(src="/assets/img/special-product.jpg", alt="hinhanh")
+	.special-content.col-10.d-flex.justify-content-center
+		.special-thumbnail
+			a.special-link.d-block(href="product-detail.html") 
+				figure 
+					img(src="/assets/img/special.jpg", alt="hinhanh")
+				.special-label
+					img(src="/assets/img/lable.png", alt="hinhanh")
+		.special-info
+			.special-name 
+				h2 RƯỢU NHO NĂM 1987
+			.special-decorate 
+				img(src="/assets/img/special-decorate.png", alt="hinhanh")
+			.special-price 
+				span 330.000đ
+			.special-btn 
+				+AddCartBtn
+			.special-desc 
+				p Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+			.special-time 
+				.day
+					span 334
+					span NGÀY
+				.hour
+					span 26
+					span GIỜ
+				.minute
+					span 60
+					span PHÚT
+				.second
+					span 15
+					span GIÂY
+
+mixin SubNavItem(text)
+	li.header-sub-item
+		a(href="javascript:void(0)")= text
+					
+mixin UserNavItem(text, state)
+	li.user-item 
+		case text 
+			when "Giỏ hàng"
+				a.user-link(href="cart.html")= text
+			when "Trạng thái đơn hàng"
+				a.user-link(href="orders.html")= text
+			when "Đăng nhập"
+				a.user-link(href="login.html")= text
+			when "Đăng ký"
+				a.user-link(href="register.html")= text
+			default 
+				a.user-link(href="javascript:void(0)")= text
+
+mixin DropDownList(list)
+	ul.header-subnav-list
+		each val in list
+			+SubNavItem(val)
+
+mixin BannerItem(url)
+	.col-lg-3.col-6 
+		img(src=url, alt="hinhanh")
+
+mixin Dots
+	.dots
+		.dot.active
+		.dot 
+		.dot
+
+mixin NewsItem(title, author, date, comments, desc, img)
+	.news-item 
+		a.news-img.d-block(href="news.html") 
+			img(src=img, alt="hinhanh")
+			div
+				i(class="fas fa-link")
+		h2= title
+		div 
+			span= 'Đăng bởi ' + author
+			span= date
+			span= comments + ' bình luận'
+		p= desc 
+		a.readmore(href="news.html") Read more 
+
+mixin NewsList(list)
+	.news-list.row
+		each val in list 
+			+NewsItem(val.title, val.author, val.date, val.comments, val.desc, val.img)
+
+mixin CommentItem 
+	.comment-item
+		.comment-icon
+			img(src="/assets/img/comment-icon.png", alt="hinhanh")
+		p Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long ...
+		a.readmore.d-block(href="javascript:void(0)") Read more 
+		.comment-author
+			.author-img 
+				img(src="/assets/img/customer/customer1.jpg", alt="hinhanh")
+			span.author-name GIANGLE
+			span.author-job Graphic Design

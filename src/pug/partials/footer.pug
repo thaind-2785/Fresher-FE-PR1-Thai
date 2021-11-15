@@ -1,0 +1,68 @@
+mixin Footer
+    section.footer 
+        .footer-wrap
+            .footer-brand 
+                img(src="/assets/img/footer-brand.png")
+            .footer-content.row.g-5
+                .footer-item.col-12.col-md-6.col-lg-2 
+                    h2 THÔNG TIN
+                    ul
+                        +FooterItem("VỀ CHÚNG TÔI")
+                        +FooterItem("GIAO HÀNG")
+                        +FooterItem("CẢM NGHĨ")
+                        +FooterItem("LƯU TRỮ")
+                        +FooterItem("CHÍNH SÁCH GIÊNG TƯ")
+                .footer-item.col-12.col-md-6.col-lg-2
+                    h2 MUA HÀNG
+                    ul
+                        +FooterItem("VẬN CHUYỂN VÀ TRẢ HÀNG")
+                        +FooterItem("MUA HÀNG AN TOÀN")
+                        +FooterItem("VẬN CHUYỂN QUỐC TẾ")
+                        +FooterItem("LIÊN KẾT")
+                        +FooterItem("DỊCH VỤ GIẢM GIÁ")
+                .footer-item.col-12.col-md-6.col-lg-4
+                    h2 GỬI EMAIL
+                    form(action="")
+                        p Gửi email cho chúng tôi để được hỗ trợ 
+                        div.d-flex
+                            input(type="email" id="mail-input" placeholder="Enter your email")
+                            button.btn.btn-send-mail(type="submit") GỬI
+                    .footer-link 
+                        i(class="fab fa-twitter")
+                        i(class="fab fa-google-plus-g")
+                        i(class="fab fa-linkedin-in")
+                .footer-item.col-12.col-md-6.col-lg-4
+                    h2 LIÊN HỆ
+                    div.d-flex 
+                        i(class="fas fa-map-marker-alt")
+                        p Tầng 4, Tòa nhà Hanoi Group Số 442 Đội Cấn, P.Cống Vị, Q.Ba Đình, Hà Nội
+                    div 
+                        i(class="fas fa-phone-volume")
+                        span (04) 6674 2332
+                        span -
+                        i(class="fas fa-phone-volume")
+                        span (04) 3786 8904
+                    div 
+                        i(class="fas fa-phone-volume")
+                        span (04) 6680 9686
+                        i(class="fas fa-envelope")
+                        span 
+                            a(href="mailto:support@bizwweb.vn") Support@bizwweb.vn
+        .footer-copyright
+            .footer-wrap
+                .row.justify-content-between.align-items-center.g-5
+                    .copyright.d-flex.align-items-center.col-12.col-md-6.col-lg-8 © Copyright 2008-2014 DKT Technology JSC
+                    .paylist.d-flex.align-items-center.col-12.col-md-6.col-lg-4 
+                        i(class="fab fa-cc-mastercard")
+                        i(class="fab fa-cc-visa")
+                        i(class="fab fa-cc-paypal")
+
+mixin FooterItem(text)
+    li
+        case text 
+            when "VỀ CHÚNG TÔI"
+                a(href="introduce.html")= text
+            default 
+                a(href="javascript:void(0)")= text
+
+

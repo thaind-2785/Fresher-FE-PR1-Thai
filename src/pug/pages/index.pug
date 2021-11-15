@@ -1,0 +1,73 @@
+extends ../layouts/layout
+block home
+	section.home 
+		img(src="/assets/img/home.jpg")
+		div
+			span.name Rượu
+			span.type Vang Đỏ
+			span.year Since 1980
+block content 
+	.main
+		section.left-decorate
+			figure 
+				img(src="/assets/img/left-decorate.png", alt="hinhanh")
+		section.right-decorate
+			figure 
+				img(src="/assets/img/right-decorate.png", alt="hinhanh")
+		section.content
+			section.intro.row.g-5
+				h2 GIỚI THIỆU
+				div.decorate
+					img(src="/assets/img/intro-decorate.png", alt="hinhanh")
+				p.col-10 Mriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui faciteorum claritatem. Investigtiones demonstraverunt lectores legere me lius quod ii legunt saepius.Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putam
+				button.btn.btn-see-more XEM THÊM
+			section.special.row.g-5
+				+SpecialItem
+			section.list-product
+				h2 SẢN PHẨM MỚI
+				div.decorate
+					img(src="/assets/img/intro-decorate.png", alt="hinhanh")
+				.new-wrap.container-fluid
+					+ListProduct(newList)
+					.prev-btn 
+						i(class="fas fa-arrow-left")
+					.next-btn 
+						i(class="fas fa-arrow-right")
+				+Dots
+			section.banners
+				.banners-wrap
+					.row.g-0
+						each val in [1,2,3,4,5,6,7,8]
+							+BannerItem("/assets/img/banners/banner" + val + ".png")
+				+Dots
+			section.list-product
+				h2 SẢN PHẨM BÁN CHẠY
+				div.decorate
+					img(src="/assets/img/intro-decorate.png", alt="hinhanh")
+				.new-wrap.container-fluid
+					+ListProduct(bestSellList)
+					.prev-btn 
+						i(class="fas fa-arrow-left")
+					.next-btn 
+						i(class="fas fa-arrow-right")
+				+Dots
+			section.news-comments
+				.container-fluid 
+					.row.g-5 
+						.news.col-lg-8.col-12
+							h2 TIN TỨC & BLOGS
+							.decorate
+								img(src="/assets/img/intro-decorate.png", alt="hinhanh")
+							.news-wrap
+								+NewsList(newsList)
+							+Dots
+						.comments.col-lg-4.col-12
+							h2 KHÁCH HÀNG
+							.decorate
+								img(src="/assets/img/intro-decorate.png", alt="hinhanh")
+							.comment-wrap
+								.comment-list.row 
+									+CommentItem
+									+CommentItem
+									+CommentItem
+							+Dots

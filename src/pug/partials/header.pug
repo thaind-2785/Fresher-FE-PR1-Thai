@@ -1,0 +1,63 @@
+include ./variable
+mixin Header
+	header
+		nav(class="header-wrap navbar navbar-expand-md")
+			div(class="container-fluid")
+				a(class="navbar-brand" href="#")
+					.logo 
+						img(src="/assets/img/logo.png", alt="logo")
+						div 
+							span Wine house
+							span Since 1980
+							img(src="/assets/img/logo1.png", alt="logo")
+				button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
+					span(class="navbar-toggler-icon")
+						i(class="fas fa-bars")
+				div(class="collapse navbar-collapse" id="navbar")
+					ul(class="navbar-nav me-auto mb-2 mb-lg-0")
+						li(class="nav-item")
+							a(class="nav-link" aria-current="page" href="#") TRANG CHỦ
+						li(class="nav-item dropdown active")
+							a(class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false") RƯỢU VANG ĐỎ
+							ul(class="dropdown-menu fix-dropdown" aria-labelledby="navbarDropdown")
+								li(class="dropdown-item")
+									h2 RƯỢU NGOẠI 
+									+DropDownList(dropDownList)
+								li(class="dropdown-item" href="#")
+									h2 RƯỢU VANG
+									+DropDownList(dropDownList)
+								li(class="dropdown-item" href="#")
+									h2 RƯỢU NGOẠI
+									+DropDownList(dropDownList)
+								li(class="dropdown-item" href="#")
+									img(src="/assets/img/dropdown.jpg", alt="hinhanh")
+						li(class="nav-item")
+							a(class="nav-link" href="javascript:void(0)") RƯỢU TRẮNG
+						li(class="nav-item")
+							a(class="nav-link" href="javascript:void(0)") CHAMPAGNE
+						li(class="nav-item")
+							a(class="nav-link" href="javascript:void(0)") THÔNG TIN
+						li(class="nav-item")
+							a(class="nav-link" href="javascript:void(0)") BLOG 
+						li(class="nav-item")
+							a(class="nav-link" href="javascript:void(0)") LIÊN HỆ
+
+mixin HeaderUser
+	section.header-user 
+		.header-wrap.container-fluid
+			nav.user-nav
+				.user-menu 
+					i(class="fas fa-sort-down")
+				ul.user-list
+					+UserNavItem("Tài khoản của tôi")
+					+UserNavItem("Trạng thái đơn hàng")
+					+UserNavItem("Danh sách ưa thích")
+					+UserNavItem("Giỏ hàng")
+					+UserNavItem("Đăng nhập")
+					+UserNavItem("Đăng ký")
+			nav.user-nav
+				ul.user-search 
+					li.search
+						input(type="text" placeholder="Tìm kiếm...")
+					li.icon
+						i(class="fas fa-search")
