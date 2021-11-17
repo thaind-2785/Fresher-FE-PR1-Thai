@@ -127,6 +127,9 @@ $XL: 1200px;
 	@else if $canvas == MD {
 		@media only screen and (max-width: $MD) { @content; } 
 	}
+	@else if $canvas == mMD {
+		@media only screen and (min-width: $MD) { @content; } 
+	}
 	@else if $canvas == XL {
 		@media only screen and (max-width: $XL) { @content; } 
 	}

@@ -167,6 +167,19 @@
                     padding-right: 15px;
                     @include display-flex;
                     @include justify-content(space-between);
+                    @include align-items(center);
+                    &:last-child{
+                        @include justify-content(center);
+                        margin-top: 20px;
+                        display: none;
+                        @include Responsive(SM){
+                            display: flex;
+                        }
+                    }
+                    @include Responsive(SM){
+                        height: 46px;
+                        padding-right: 0;
+                    }
                     .menu-category{
                         display: none;
                         a{
@@ -205,6 +218,24 @@
                             border: none;
                             &.active{
                                 color: $textHoverColor;
+                            }
+                            @include Responsive(SM){
+                                font-size: 1.8rem;
+                                padding-left: 14px;
+                                padding-right: 14px;
+                            }
+                        }
+                    }
+                }
+                ul{
+                    margin-top: 0;
+                    .product__item{
+                        @include Responsive(mMD){
+                            width: 33.33333%;
+                        }
+                        @include Responsive(MD){
+                            &:nth-child(7),&:nth-child(8),&:nth-child(9){
+                                display: none;
                             }
                         }
                     }
