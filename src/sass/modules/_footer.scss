@@ -134,12 +134,15 @@
             .footer-row{
                 height: 100%;
                 @include Responsive(XS){
-                    @include justify-content(center);
                     &.row{
                         flex-direction: column-reverse;
                     }
                     .copyright{
                         margin-top: 10px;
+                        @include justify-content(center);
+                    }
+                    .paylist{
+                        @include justify-content(center);
                     }
                 }
                 .copyright{
@@ -151,6 +154,9 @@
                         font-size: 3.4rem;
                         margin-right: 24px;
                         color: $textColor;
+                        &:last-child{
+                            margin-right: 0;
+                        }
                     }
                 }
             }

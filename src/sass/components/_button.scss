@@ -38,6 +38,7 @@
         height: 30px;
         width: 122px;
         margin-top: 10px;
+        @include flexbox;
     }
     @include Responsive(SM){
         font-size: 1.6rem;

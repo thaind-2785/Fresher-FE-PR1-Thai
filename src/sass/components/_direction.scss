@@ -1,0 +1,43 @@
+.direction {
+    &-list {
+        height: 80px;
+        margin-bottom: 0;
+        @include flexbox;
+        @include justify-content(flex-start)
+    }
+    &-item {
+        a {
+            font-size: 1.4rem;
+            color: $textColor;
+            padding-right: 6px;
+        }
+        &.active {
+            a {
+                color: $textHoverColor;
+            }
+        }
+        &:not(:first-child) {
+            a {
+                padding-left: 8px;
+            }
+        }
+        &:not(:last-child) {
+            a {
+                position: relative;
+                &::after {
+                    content: '';
+                    height: 80%;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    width: 1px;
+                    background-color: $textColor;
+                    -webkit-transform-origin: center;
+                    -ms-transform-origin: center;
+                    transform-origin: center;
+                    @include transform(rotate(20deg) translateY(-50%))
+                }
+            }
+        }
+    }
+}

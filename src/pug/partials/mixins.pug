@@ -170,6 +170,17 @@ mixin categoryList(list)
 					a(href="products.html")= val.name 
 					span= '(' + val.quantity + ')'
 
+mixin breadcrumb(items) 
+	nav.direction-nav 
+		ul.direction-list
+			each item in items
+				if item.active
+					li.direction-item.active 
+						a(href=item.href)= item.label
+				else 
+					li.direction-item 
+						a(href=item.href)= item.label
+
 mixin pagination
 	nav(aria-label="navigation")
 		ul.pagination

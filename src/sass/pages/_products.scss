@@ -4,28 +4,6 @@
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
-    .direction{
-        .direction-nav{
-            .direction-list{
-                height: 80px;
-                margin-bottom: 0;
-                @include flexbox;
-                @include justify-content(flex-start);
-                .direction-item{
-                    a, span{
-                        font-size: 1.4rem;
-                        color: $textColor;
-                        margin-right: 6px;
-                    }
-                    &.active{
-                        a,span{
-                            color: $textHoverColor;
-                        }
-                    }
-                }
-            }
-        }
-    }
     .products-content{
         margin-top: 10px;
         .products-category{
@@ -244,4 +222,3 @@
         }
     }
 }
-
