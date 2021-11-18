@@ -1,0 +1,49 @@
+.main-contact {
+	.contact-content {
+		margin-top: 30px;
+		iframe {
+			width: 100%;
+		}
+		.contact-detail {
+			color: $textColor;
+			font-size: 1.4rem;
+			.logo {
+				margin-left: 15px;
+				.logo-text {
+					@include transform(translate(-16px,-25%));
+					width: unset;
+				}
+			}
+			i {
+				margin-right: 15px;
+			}
+		}
+		.contact-address {
+			@include display-flex;
+			@include align-items(baseline);
+			margin-top: 30px;
+		}
+		.contact-mail {
+			margin-top: 10px;
+			a {
+				color: $textHoverColor;
+			}
+		}
+		.contact-follows {
+			margin-top: 16px;
+			.follows-item {
+				margin-top: 8px;
+				i:hover {
+					color: $textHoverColor;
+					cursor: pointer;
+				}
+			}
+		}
+		.contact-form {
+			margin-top: 60px;
+			@include Responsive(XS) {
+				margin-top: 30px;
+			}
+		}
+	}
+}

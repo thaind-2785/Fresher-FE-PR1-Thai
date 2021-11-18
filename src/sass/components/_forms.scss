@@ -1,0 +1,43 @@
+.form {
+    margin-top: 0;
+    .form-group {
+        @include display-flex;
+        margin-bottom: 15px;
+        @include align-items(baseline);
+        label {
+            width: 100px;
+            font-size: 1.4rem;
+            color: $textColor;
+        }
+        input, textarea {
+            background-color: #fafafa;
+            border: 1px solid $borderColor;
+            @include flex(1);
+            height: 40px;
+            font-size: 1.4rem;
+        }
+        textarea {
+            height: 160px;
+        }
+        button[type=submit] {
+            margin-left: 100px;
+            width: 70px;
+            @include Responsive(XS) {
+                width: 100%;
+                margin-left: 0
+            }
+        }
+        @include Responsive(XS) {
+            @include flex-direction(column);
+            label {
+                font-size: 1.8rem;
+                margin-bottom: 6px
+            }
+            input, textarea {
+                @include flex(unset);
+                width: 100%;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

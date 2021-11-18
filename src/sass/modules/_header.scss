@@ -187,28 +187,6 @@ header {
 			}
 		}
 	}
-	.logo {
-		position: relative;
-		.logo-text {
-			position: absolute;
-			top: 50%;
-			@include transform(translateY(-25%));
-			@include flexbox;
-			@include flex-direction(column);
-			width: 100%;
-			span {
-				color: $textHoverColor;
-			}
-			span:first-child {
-				font-family: $fontUtmAlpineKt;
-				font-size: 2.9rem;
-				line-height: 1;
-			}
-			span:last-child {
-				font-size: 1.6rem;
-			}
-		}
-	}
 	.navbar-nav {
 		margin-left: 60px;
 		width: 100%;
