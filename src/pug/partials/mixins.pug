@@ -12,7 +12,7 @@ mixin productItem(itemType, imgSrc, itemName, itemPrice, itemOldPrice)
 							+newLabel
 						default
 							+saleLabel
-				a.item-link.d-block
+				a.item-link.d-block(href="product-detail.html")
 					img(class="item-img" src=imgSrc alt=itemName)
 				.item-option
 					a(href="javacript:void(0)")
@@ -24,7 +24,7 @@ mixin productItem(itemType, imgSrc, itemName, itemPrice, itemOldPrice)
 					a(href="javacript:void(0)")
 						i(class="fas fa-compress-alt")
 			.product__item-info
-				a.item-name(href="javacript:void(0)")= itemName
+				a.item-name(href="product-detail.html")= itemName
 				div 
 					span.item-price= itemPrice
 					span.item-old-price= itemOldPrice
@@ -32,12 +32,12 @@ mixin productItem(itemType, imgSrc, itemName, itemPrice, itemOldPrice)
 				+addCartBtn
 
 mixin listProduct(list)
-	ul.row.g-5
+	ul(class="row g-5")&attributes(attributes)
 		each val in list 
 			+productItem(val.type, val.img, val.name, val.price, val.oldPrice)
 			
 mixin addCartBtn 
-	button.btn.btn-addto-card ADD TO CART
+	button.btn.btn-addto-cart ADD TO CART
 
 mixin saleLabel 
 	.item-type.position-absolute
@@ -163,11 +163,11 @@ mixin categoryList(list)
 			if val.isActive 
 				li.active
 					i(class="fas fa-circle")
-					a(href="product.html")= val.name 
+					a(href="products.html")= val.name 
 					span= '(' + val.quantity + ')'
 			else 
 				li 
-					a(href="product.html")= val.name 
+					a(href="products.html")= val.name 
 					span= '(' + val.quantity + ')'
 
 mixin pagination
