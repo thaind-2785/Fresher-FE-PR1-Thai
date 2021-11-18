@@ -37,7 +37,7 @@ mixin listProduct(list)
 			+productItem(val.type, val.img, val.name, val.price, val.oldPrice)
 			
 mixin addCartBtn 
-	button.btn.btn-addto-cart ADD TO CART
+	a.btn.btn-addto-cart ADD TO CART
 
 mixin saleLabel 
 	.item-type.position-absolute
@@ -202,3 +202,18 @@ mixin pagination
 				a(class="page-link" href="#" aria-label="Previous")
 					span(aria-hidden="true")
 						i(class="fas fa-caret-right")
+
+mixin cartItem(item)
+	tr
+		td.cart-img
+			img(src= item.img, alt=item.name)
+		td.cart-name= item.name
+		td.cart-price= item.price
+		td.cart-quantity= item.quantity
+		td.cart-total= item.total
+		td.cart-del
+			i(class="far fa-trash-alt")
+			
+mixin cartList(list)
+	each val in list 
+		+cartItem(val)

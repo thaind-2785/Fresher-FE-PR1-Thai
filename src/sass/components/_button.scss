@@ -1,16 +1,20 @@
-.btn{
+.btn {
     font-size: 12px;
     border: none;
     outline: none;
     border-radius: unset;
-    &.btn-addto-cart{
+    &.btn-addto-cart {
         background-color: black;
         color: white;
         font-family: 'Times New Roman', Times;
         height: 30px;
         min-width: 122px;
+        @include flexbox;
+        @include Responsive(XS){
+            width: 100%;
+        }
     }
-    &.btn-send-mail{
+    &.btn-send-mail {
         background-color: black;
         color: white;
         width: 60px;
@@ -25,13 +29,13 @@
             left: 100%;
             top:0
         }
-        @include Responsive(SM){
+        @include Responsive(SM) {
             &::before{
                 border-width: 20px;
             }
         }
     }
-    &.btn-see-more{
+    &.btn-see-more {
         background-color: black;
         color: white;
         font-family: 'Times New Roman', Times;
@@ -40,11 +44,19 @@
         margin-top: 10px;
         @include flexbox;
     }
-    @include Responsive(SM){
+    &.btn-default {
+        background-color: black;
+        color: white;
+        font-family: 'Times New Roman', Times;
+        height: 30px;
+        padding: 8px 15px;
+        @include flexbox;
+    }
+    @include Responsive(SM) {
         font-size: 1.6rem;
         min-height: 40px;
     }
-    &:hover{
+    &:hover {
         background-color: $textHoverColor;
     }
 }

@@ -1,0 +1,25 @@
+extends ../layouts/layout
+
+block content
+	.main-cart 
+		section.direction
+			+breadcrumb(cartBreadcrumbItems)
+		section.cart-heading
+			+sectionHeader("GIỎ HÀNG")
+		section.cart-content
+			.cart-table 
+				table 
+					thead
+						tr 
+							th ẢNH
+							th TÊN SẢN PHẨM
+							th GIÁ
+							th SỐ LƯỢNG
+							th TỔNG SỐ
+							th XÓA 
+					tbody 
+						+cartList(cartList)
+			.cart-option 
+				a(href="products.html").btn.btn-default TIẾP TỤC MUA HÀNG 
+				a(href="javascript:void(0)").btn.btn-default XÓA 
+				a(href="javascript:void(0)").btn.btn-default CẬP NHẬT

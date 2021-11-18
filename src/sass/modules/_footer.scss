@@ -1,66 +1,66 @@
-.footer {
-    .footer-wrap{
+.footer  {
+    .footer-wrap {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 15px;
-        .footer-brand {
+        .footer-brand  {
             margin-top: 84px;
             text-align: center;
             margin-bottom: 57px;
-            img{
+            img {
                 width: 100%;
             }
         }
-        .footer-content {
-            .footer-item{
-                @include Responsive(XS){
+        .footer-content  {
+            .footer-item {
+                @include Responsive(XS) {
                     text-align: center;
                 }
-                h2{
+                h2 {
                     margin-bottom: 18px;
                     font-size: 1.8rem;
                     color: black;
                     letter-spacing: 2px;
                 }
-                &:nth-child(3) h2{
+                &:nth-child(3) h2 {
                     margin-bottom: 15px;
                 }
-                &:last-child h2{
+                &:last-child h2 {
                     margin-bottom: 10px;
                 }
-                ul{
-                    li{
+                ul {
+                    li {
                         font-size: 1.2rem;
                         margin-bottom: 8px;
-                        @include Responsive(SM){
+                        @include Responsive(SM) {
                             font-size: 1.4rem;
                         }
-                        @include Responsive(XS){
+                        @include Responsive(XS) {
                             margin-bottom: 12px;
                         }
-                        a{
+                        a {
                             color: $textColor;
                         }
-                        &:hover{
-                            a{
+                        &:hover {
+                            a {
                                 color: $textHoverColor;
                             }
                         }
                     }
                 }
-                form{
+                form {
                     margin-bottom: 35px;
-                    p{
+                    p {
                         font-size: 1.4rem;
                         color: $textColor;
                     }
-                    .footer-email{
+                    .footer-email {
                         margin-top: 24px;
                         @include align-items(center);
-                        @include Responsive(XS){
+                        @include Responsive(XS) {
                             @include justify-content(center)
                         }
-                        input{
+                        input {
                             display: block;
                             padding-left: 15px;
                             width: 224px;
@@ -70,52 +70,52 @@
                             color: $textColor;
                             border: 1px solid $borderColor;
                             border-right: none;
-                            @include Responsive(SM){
+                            @include Responsive(SM) {
                                 font-size: 1.6rem;
                                 height: 40px;
                             }
                         }
                     }
                 }
-                .footer-link{
-                    i{
+                .footer-link {
+                    i {
                         font-size: 12px;
                         color: $textColor;
                         margin-right: 12px;
-                        &:hover{
+                        &:hover {
                             color: $textHoverColor;
                             cursor: pointer;
                         }
-                        @include Responsive(SM){
+                        @include Responsive(SM) {
                             font-size: 2rem;
                             padding: 0 12px;
                         }
                     }
                 }
-                .footer-contact {
+                .footer-contact  {
                     width: 272px;
                     @include align-items(baseline);
                     color: $textColor;
                     margin-bottom: 8px;
-                    @include Responsive(XS){
+                    @include Responsive(XS) {
                         width: 100%;
                     }
-                    i{
+                    i {
                         margin-right: 8px;
                         font-size: 1.2rem;
-                        &.fa-envelope{
+                        &.fa-envelope {
                             margin-right: 4px;
                         }
                     }
-                    p{
+                    p {
                         font-size: 1.4rem;
                         margin-bottom: 0;
                         line-height: 2.2;
                     }
-                    span{
+                    span {
                         font-size: 1.4rem;
                         margin-right: 8px;
-                        a{
+                        a {
                             color: $textHoverColor;
                         }
                     }
@@ -123,38 +123,38 @@
             }
         }
     }
-    .footer-copyright{
+    .footer-copyright {
         margin-top: 40px;
         border-top: 1px solid $borderColor;
         padding: 12px 0;
-        .footer-wrap{
+        .footer-wrap {
             height: 100%;
             margin: 0 auto;
             @include align-items(center);
-            .footer-row{
+            .footer-row {
                 height: 100%;
-                @include Responsive(XS){
-                    &.row{
+                @include Responsive(XS) {
+                    &.row {
                         flex-direction: column-reverse;
                     }
-                    .copyright{
+                    .copyright {
                         margin-top: 10px;
                         @include justify-content(center);
                     }
-                    .paylist{
+                    .paylist {
                         @include justify-content(center);
                     }
                 }
-                .copyright{
+                .copyright {
                     font-size: 1.2rem;
                     color: $textColor;
                 }
-                .paylist{
-                    i{
+                .paylist {
+                    i {
                         font-size: 3.4rem;
                         margin-right: 24px;
                         color: $textColor;
-                        &:last-child{
+                        &:last-child {
                             margin-right: 0;
                         }
                     }
