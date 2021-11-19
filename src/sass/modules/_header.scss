@@ -270,6 +270,10 @@ header{
 				.dropdown-item{
 					padding: 15px;
 					@include flex(1);
+					&:active{
+						background-color: white;
+						color: black;
+					}
 					&:last-child{
 						@include flex(2);
 					}
