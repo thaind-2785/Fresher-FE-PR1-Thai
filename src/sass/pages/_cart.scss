@@ -1,0 +1,75 @@
+.main-cart {
+    max-width: 1200px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    .cart-table {
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        table {
+            background-color: $tableBackground;
+            width: 100%;
+            min-width: 992px;
+            margin-top: 30px;
+            th {
+                font-size: 1.4rem;
+                text-align: center;
+                height: 54px;
+                border: 1px solid $borderColor;
+            }
+            tr {
+                border: 1px solid $borderColor;
+            }
+            td {
+                font-size: 1.4rem;
+                text-align: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border: 1px solid $borderColor;
+                height: 200px;
+                &.cart-img {
+                    width: 16.66667%;
+                    img {
+                        height: 100%;
+                    }
+                }
+                &.cart-name {
+                    width: 33.33333%;
+                }
+                &.cart-price, &.cart-total {
+                    width: 16.66667%;
+                    font-size: 1.6rem;
+                    font-family: $fontUtmCaviar;
+                    color: $textHoverColor;
+                }
+                &.cart-del {
+                    font-size: 1.6rem;
+                    width: 8.33333%;
+                    i{
+                        cursor: pointer;
+                    }
+                }
+                &.cart-quantity {
+                    width: 8.33333%;
+                }
+            }
+        }
+    }
+    .cart-option {
+        margin-top: 30px;
+        @include flexbox;
+        @include justify-content(flex-end);
+        @include flexwrap(wrap);
+        a {
+            margin-left: 15px;
+            &:last-child {
+                @include Responsive(XS) {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}

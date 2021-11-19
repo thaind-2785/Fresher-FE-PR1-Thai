@@ -1,37 +1,37 @@
-.header-user{
+.header-user {
 	background-color: rgba(255, 255, 255, 0.1);
 	position: relative;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 999999;
-	.header-wrap{
+	.header-wrap {
 		max-width: 1200px;
 		margin: 0 auto;
 		@include flexbox;
 		@include justify-content(space-between);
-		.user-nav{
+		.user-nav {
 			position: relative;
-			.user-menu{
+			.user-menu {
 				display: none;
-				i{
+				i {
 					font-size: 3.2rem;
 					padding: 4px 20px;
 					color: $textColor;
 					@include transform(translateY(-7px));
 				}
-				@include Responsive(MD){
+				@include Responsive(MD) {
 					display: block;
 				}
-				&:hover + .user-list{
+				&:hover + .user-list {
 					@include display-flex;
 				}
 			}
-			.user-list{
+			.user-list {
 				@include flexbox;
 				margin: 0;
-				.user-item{
-					&:not(:first-child) a::before{
+				.user-item {
+					&:not(:first-child) a::before {
 						content: '';
 						position: absolute;
 						width: 6px;
@@ -39,21 +39,21 @@
 						bottom: 50%;
 						left: -3px
 					}
-					.user-link{
+					.user-link {
 						font-size: 1.2rem;
 						color: $textColor;
 						display: block;
 						padding: 8px 15px;
 						position: relative;
-						&:hover{
+						&:hover {
 							color: $textHoverColor
 						}
-						@include Responsive(MD){
+						@include Responsive(MD) {
 							font-size: 1.6rem
 						}
 					}
 				}
-				@include Responsive(MD){
+				@include Responsive(MD) {
 					position: absolute;
 					top: 100%;
 					left: 0;
@@ -64,7 +64,7 @@
 					background-color: white;
 					width: 200px;
 					border: 1px solid $textHoverColor;
-					&::before{
+					&::before {
 						content: '';
 						width: 100%;
 						height: 10px;
@@ -72,18 +72,18 @@
 						top: -10px;
 						left: 0;
 					}
-					.user-link::before{
+					.user-link::before {
 						display: none;
 					}
 				}
 			}
-			.user-search{
+			.user-search {
 				@include flexbox;
 				margin: 0;
-				.search{
+				.search {
 					font-size: 1.2rem;
 					margin-right: 30px;
-					input{
+					input {
 						border: none;
 						font-style: italic;
 						font-weight: 700;
@@ -91,15 +91,15 @@
 						border-left: 1px solid $textColor;
 						padding-left: 10px;
 						background-color: transparent;
-						@include Responsive(MD){
+						@include Responsive(MD) {
 							font-size: 1.6rem;
 						}
-						@include Responsive(SM){
+						@include Responsive(SM) {
 							font-size: 1.8rem;
 						}
 					}
 				}
-				.icon{
+				.icon {
 					padding: 0px 15px;
 					font-size: 1.4rem;
 					color: $textColor;
@@ -108,44 +108,44 @@
 			}
 		}
 	}
-	@include Responsive(MD){
+	@include Responsive(MD) {
 		position: unset;
-		.user-nav:first-child .user-list{
+		.user-nav:first-child .user-list {
 			display: none;
 		}
-		.header-wrap{
+		.header-wrap {
 			height: 40px;
 		}
-		.user-search .icon{
+		.user-search .icon {
 			font-size: 2.2rem !important;
 		}
-		.user-nav:first-child .user-list:hover{
+		.user-nav:first-child .user-list:hover {
 			@include display-flex
 		}
 	}
 }
 
-header{
+header {
 	background-color: black;
 	height: 150px;
 	@include flexbox;
-	@include Responsive(MD){
+	@include Responsive(MD) {
 		height: 100px;
 	}
-	.header-wrap{
+	.header-wrap {
 		width: 100%;
 		max-width: 1200px;
 		height: 100%;
-		&>div{
+		&>div {
 			padding: 0 15px;
 		}
-		.navbar-toggler{
-			@include Responsive(SM){
+		.navbar-toggler {
+			@include Responsive(SM) {
 				display: block;
 			}
 		}
-		.navbar-collapse{
-			@include Responsive(SM){
+		.navbar-collapse {
+			@include Responsive(SM) {
 				background-color: white;
 				z-index: 10;
 				position: absolute;
@@ -155,31 +155,31 @@ header{
 				@include transform(translateX(-50%));
 				display: none!important;
 			}
-			&.show{
+			&.show {
 				display: flex !important;
 				display: -webkit-box !important;
 				display: -ms-flexbox !important;
 			}
 		}
-		.navbar-brand{
+		.navbar-brand {
 			padding: 0 15px;
-			@include Responsive(LTAB){
+			@include Responsive(LTAB) {
 				display: none;
 			}
-			@include Responsive(SM){
+			@include Responsive(SM) {
 				height: 100%;
-				.logo{
+				.logo {
 					height: 100%;
 					width: 140px;
-					img{display: none;}
-					div{
+					img {display: none;}
+					div {
 						@include transform(translateY(-50%));
 					}
 				}
 			}
 		}
-		button{
-			span{
+		button {
+			span {
 				font-size: 4rem;
 				color: white;
 				width: unset;
@@ -187,72 +187,72 @@ header{
 			}
 		}
 	}
-	.logo{
+	.logo {
 		position: relative;
-		.logo-text{
+		.logo-text {
 			position: absolute;
 			top: 50%;
 			@include transform(translateY(-25%));
 			@include flexbox;
 			@include flex-direction(column);
 			width: 100%;
-			span{
+			span {
 				color: $textHoverColor;
 			}
-			span:first-child{
-				font-family: 'utm-alpine-kt';
+			span:first-child {
+				font-family: $fontUtmAlpineKt;
 				font-size: 2.9rem;
 				line-height: 1;
 			}
-			span:last-child{
+			span:last-child {
 				font-size: 1.6rem;
 			}
 		}
 	}
-	.navbar-nav{
+	.navbar-nav {
 		margin-left: 60px;
 		width: 100%;
 		@include justify-content(space-between);
-		@include Responsive(MD){
+		@include Responsive(MD) {
 			margin-left: 0;
 		}
-		@include Responsive(SM){
+		@include Responsive(SM) {
 			flex-direction: column !important;
 			-webkit-box-orient: vertical !important;
 			-webkit-box-direction: normal !important;
 			-ms-flex-direction: column !important;
 			border: 1px solid $textHoverColor;
 		}
-		.nav-item{
+		.nav-item {
 			text-align: center;
-			&:hover .nav-link{
+			&:hover .nav-link {
 				color: $textHoverColor;
 			}
-			.nav-link{
+			.nav-link {
 				font-size: 1.3rem;
 				color: $textNavColor;
 			}
-			@include Responsive(SM){
+			@include Responsive(SM) {
 				margin-bottom: 10px;
-				&:first-child{
+				&:first-child {
 					margin-top: 10px;
 				}
-				.nav-link{
+				.nav-link {
 					color: $textColor;
 					font-size: 1.6rem;
 				}
 			}
-			.dropdown-menu{
+			.dropdown-menu {
 				@include align-items(flex-start);
 				width: 945px;
-				border: 1px solid #e6ae48;
+				border: 1px solid $textHoverColor;
 				top: calc(100% + 59px);
 				left: -143px;
 				padding-top: 20px;
-				&.show{
+				&.show {
 					@include display-flex;
 				}
-				&::before{
+				&::before {
 					content: '';
 					border-width: 10px;
 					border-style: solid;
@@ -261,66 +261,66 @@ header{
 					bottom: 100%;
 					left: 20%;
 				}
-				@include Responsive(XS){
+				@include Responsive(XS) {
 					@include flex-direction(column);
-					.dropdown-item{
+					.dropdown-item {
 						text-align: center;
 					}
 				}
-				.dropdown-item{
+				.dropdown-item {
 					padding: 15px;
 					@include flex(1);
-					&:active{
+					&:active {
 						background-color: white;
 						color: black;
 					}
-					&:last-child{
+					&:last-child {
 						@include flex(2);
 					}
-					h2{
+					h2 {
 						font-size: 1.4rem;
 						margin-bottom: 16px;
 						font-weight: 700;
 					}
-					img{
+					img {
 						width: 100%;
 					}
-					ul{
-						.header-sub-item{
+					ul {
+						.header-sub-item {
 							margin-bottom: 16px;
 							font-size: 1.4rem;
-							a{
+							a {
 								color: $textColor;
 							}
-							&:hover a{
+							&:hover a {
 								color: $textHoverColor;
 							}
-							@include Responsive(SM){
+							@include Responsive(SM) {
 								margin-bottom: 20px;
 								font-size: 1.7rem;
 							}
 						}
 					}
 				}
-				@include Responsive(XL){
+				@include Responsive(XL) {
 					width: 70vw;
 					left: -10vw;
 				}
-				@include Responsive(SM){
+				@include Responsive(SM) {
 					@include flexwrap(wrap);
 					width: 80vw;
 					left: -1px;
 					position: absolute;
 					top: unset;
-					&::before, .dropdown-item:last-child{
+					&::before, .dropdown-item:last-child {
 						display: none;
 					}
 				}
-				@include Responsive(LTAB){
+				@include Responsive(LTAB) {
 					width: 90vw;
 					left: -10vw;
 					top: calc(100% + 36px);
-					&::before{
+					&::before {
 						left: 16%;
 					}
 				}

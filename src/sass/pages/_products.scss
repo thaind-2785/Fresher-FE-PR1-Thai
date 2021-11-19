@@ -1,16 +1,16 @@
-.main-products{
+.main-products {
     max-width: 1200px;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
-    .products-content{
+    .products-content {
         margin-top: 10px;
-        .products-category{
+        .products-category {
             margin-top: 0;
             position: relative;
-            @include Responsive(XS){
-                &.show{
+            @include Responsive(XS) {
+                &.show {
                     display: block;
                 }
                 border: 1px solid $borderColor;
@@ -21,82 +21,82 @@
                 padding-bottom: 20px;
                 z-index: 10;
                 margin-top: 15px;
-                &::-webkit-scrollbar{
+                &::-webkit-scrollbar {
                     display: none;
                 }
             }
-            .section-header{
+            .section-header {
                 margin-top: 40px;
-                h2{
+                h2 {
                     font-size: 1.6rem;
                 }
-                &:first-child{
+                &:first-child {
                     margin-top: 0;
                 }
-                @include Responsive(SM){
+                @include Responsive(SM) {
                     margin-top: 20px;
                 }
             }
-            .section-decorate{
+            .section-decorate {
                 margin-top: 10px;
                 width: 70px;
-                &:not(:first-child){
+                &:not(:first-child) {
                     margin-bottom: 30px;
                 }
-                img{
+                img {
                     width: 100%;
                 }
             }
-            .close-category{
+            .close-category {
                 position: absolute;
                 top: 10px;
                 right: 14px;
                 display: none;
-                @include Responsive(XS){
+                @include Responsive(XS) {
                     display: block;
                 }
-                a{
+                a {
                     font-size: 2.4rem;
                     color: $textColor;
                     font-family: sans-serif;
                     font-weight: 700;
                 }
             }
-            nav{
+            nav {
                 margin-top: 30px;
-                ul{
-                    li{
+                ul {
+                    li {
                         font-size: 1.4rem;
                         font-weight: 700;
-                        &:last-child{
+                        &:last-child {
                             margin-top: 8px;
                         }
-                        ul{
-                            li{
+                        ul {
+                            li {
                                 font-size: 1.4rem;
                                 margin-top: 8px;
                                 font-weight: 500;
-                                @include Responsive(SM){
+                                @include Responsive(SM) {
                                     font-size: 1.7rem;
                                 }
-                                &.active{
+                                &.active {
                                     @include display-flex;
                                     @include align-items(center);
-                                    i{
+                                    i {
                                         font-size: 0.6rem;
                                         color: $textColor;
                                         margin-right: 6px;
                                     }
-                                    a, span, i{
+                                    a, span, i {
                                         color: $textHoverColor
                                     }
                                 }
-                                a, span{
+                                a, span {
                                     color: $textColor;
                                     margin-right: 6px;
                                 }
-                                &:hover{
-                                    a, span, i{
+                                &:hover {
+                                    a, span, i {
                                         color: $textHoverColor
                                     }
                                 }
@@ -105,12 +105,12 @@
                     }
                 }
             }
-            .category-compare{
+            .category-compare {
                 color: $textColor;
                 font-size: 1.4rem;
             }
-            .category-tags{
-                span{
+            .category-tags {
+                span {
                     padding: 4px 10px;
                     color: $textColor;
                     font-size: 1.4rem;
@@ -119,26 +119,26 @@
                     margin-right: 8px;
                     margin-bottom: 8px;
                     min-width: 30px;
-                    &:hover{
+                    &:hover {
                         background-color: $textHoverColor;
                         color: white;
                     }
                 }
             }
-            .category-banners{
+            .category-banners {
                 margin-top: 50px;
-                @include Responsive(SM){
+                @include Responsive(SM) {
                     margin-top: 20px;
                 }
             }
         }
-        .products-list{
+        .products-list {
             margin-top: 40px;
-            @include Responsive(SM){
+            @include Responsive(SM) {
                 margin-top: 15px;
             }
-            .products-wrap{
-                .products-pagination{
+            .products-wrap {
+                .products-pagination {
                     height: 36px;
                     border-top: 1px solid $borderColor;
                     border-bottom: 1px solid $borderColor;
@@ -146,58 +146,58 @@
                     @include display-flex;
                     @include justify-content(space-between);
                     @include align-items(center);
-                    &:last-child{
+                    &:last-child {
                         @include justify-content(center);
                         margin-top: 20px;
                         display: none;
-                        @include Responsive(SM){
+                        @include Responsive(SM) {
                             display: flex;
                         }
                     }
-                    @include Responsive(SM){
+                    @include Responsive(SM) {
                         height: 46px;
                         padding-right: 0;
                     }
-                    .menu-category{
+                    .menu-category {
                         display: none;
-                        a{
+                        a {
                             font-size: 3rem;
                             color: $textColor;
                             line-height: 36px;
                         }
-                        @include Responsive(XS){
+                        @include Responsive(XS) {
                             display: block;
                         }
                     }
-                    .pagination-direction{
-                        @include Responsive(XS){
+                    .pagination-direction {
+                        @include Responsive(XS) {
                             display: none;
                         }
                         padding-left: 15px;
-                        a{
+                        a {
                             font-size: 2rem;
                             color: $textColor;
                             line-height: 36px;
                             margin-right: 12px;
-                            &.active{
+                            &.active {
                                 color: $textHoverColor;
                             }
                         }
                     }
-                    nav{
+                    nav {
                         @include display-flex;
                         @include align-items(center);
-                        ul{
+                        ul {
                             margin-bottom: 0;
                         }
-                        a{
+                        a {
                             color: $textColor;
                             font-size: 1.4rem;
                             border: none;
-                            &.active{
+                            &.active {
                                 color: $textHoverColor;
                             }
-                            @include Responsive(SM){
+                            @include Responsive(SM) {
                                 font-size: 1.8rem;
                                 padding-left: 14px;
                                 padding-right: 14px;
@@ -205,14 +205,14 @@
                         }
                     }
                 }
-                ul{
+                ul {
                     margin-top: 0;
-                    .product__item{
-                        @include Responsive(mMD){
+                    .product__item {
+                        @include Responsive(mMD) {
                             width: 33.33333%;
                         }
-                        @include Responsive(MD){
-                            &:nth-child(7),&:nth-child(8),&:nth-child(9){
+                        @include Responsive(MD) {
+                            &:nth-child(7),&:nth-child(8),&:nth-child(9) {
                                 display: none;
                             }
                         }

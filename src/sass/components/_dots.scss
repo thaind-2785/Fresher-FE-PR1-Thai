@@ -1,4 +1,4 @@
-.dots{
+.dots {
     width: 50px;
     margin-top: 20px;
     margin-left: auto;
@@ -6,15 +6,15 @@
     @include flexbox;
     @include justify-content(space-between);
     display: none;
-    @include Responsive(MD){
+    @include Responsive(MD) {
         @include display-flex;
     }
-    .dot{
+    .dot {
         width: 10px;
         height: 10px;
         border-radius: 50%;
         background-color: $textColor;
-        &.active{
+        &.active {
             background-color: $textHoverColor;
         }
     }
