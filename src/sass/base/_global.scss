@@ -31,3 +31,11 @@ h2 {
     padding-right: 15px;
     margin: 0 auto;
 }
+
+p {
+    font-size: 1.6rem;
+    color: $textColor;
+    @include Responsive(SM){
+        font-size: 1.8rem !important;
+    }
+}

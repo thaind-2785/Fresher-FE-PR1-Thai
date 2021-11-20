@@ -1,0 +1,271 @@
+.main-detail {
+	max-width: 1200px;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 0 auto;
+	.detail-content {
+		margin-bottom: 32px;
+	}
+	.detail-images {
+		@include display-flex;
+		height: 700px;
+		@include Responsive(XS) {
+			height: 430px;
+		}
+		.images-tabs {
+			width: 14.9253%;
+			height: 100%;
+			border: $borderDefault;
+			@include Responsive(XS) {
+				width: 20%;
+			}
+		}
+		.images-list {
+			height: 80%;
+			overflow-y: auto;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+			.image-item {
+				height: 20%;
+				width: 100%;
+				padding: 15px;
+				position: relative;
+				&:hover{
+					.image-link {
+						border: 2px solid $textHoverColor;
+					}
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					width: 30%;
+					border-bottom: $borderDefault;
+					bottom: 0;
+					left: 50%;
+					@include transform(translateX(-50%))
+				}
+			}
+			.image-link {
+				padding: 2px 0;
+				text-align: center;
+				&.active{
+					border: 2px solid $textHoverColor;
+				}
+			}
+		}
+		.control-up, .control-down {
+			height: 10%;
+			font-size: 1.6rem;
+			color: $textHoverColor;
+			cursor: pointer;
+			@include flexbox;
+		}
+		.images-main {
+			width: 85.0746%;
+			text-align: center;
+			border: $borderDefault;
+			border-left: none;
+			img{
+				width: 100%;
+			}
+		}
+		img {
+			height: 100%;
+			margin: 0 auto;
+		}
+	}
+	.form-detail-options {
+		.form-group {
+			margin-top: 24px;
+			label {
+				font-size: 1.6rem;
+				color: $textColor;
+				margin-bottom: 14px;
+				@include Responsive(SM) {
+					font-size: 2rem;
+				}
+			}
+		}
+		a {
+			color: $textColor;
+			font-size: 1.4rem;
+			margin-right: 20px;
+			&:hover {
+				color: $textHoverColor;
+			}
+		}
+		i {
+			margin-right: 8px;
+		}
+		p {
+			font-size: 1.3rem;
+			color: $textColor;
+			width: 80%;
+			@include Responsive(SM) {
+				font-size: 1.8rem;
+			}
+		}
+		.options-price {
+			color: $textHoverColor;
+			font-size: 3.4rem;
+			font-family: $fontUtmCaviar;
+			margin-top: 8px;
+			margin-bottom: 8px;
+		}
+		.options-star {
+			height: 50px;
+			font-size: 1.3rem;
+			@include display-flex;
+			@include align-items(center);
+			border-bottom: $borderDefault;
+			border-top: $borderDefault;
+			span, a {
+				color: $textColor;
+				&:hover {
+					color: $textHoverColor;
+				}
+				@include Responsive(SM){
+					font-size: 1.6rem;
+				}
+			}
+			.reviews {
+				position: relative;
+				padding-right: 8px;
+				padding-left: 8px;
+				margin-right: 0;
+				&::after {
+					content: "";
+					height: 100%;
+					top: 0;
+					right: 0;
+					border-right: $borderDefault;
+					position: absolute;
+				}
+			}
+			.reviews-btn {
+				padding-left: 8px;
+			}
+		}
+		.colors {
+			@include display-flex
+		}
+		.color {
+			width: 35px;
+			height: 35px;
+			padding: 3px;
+			cursor: pointer;
+			&.active, &:hover {
+				border: 1px solid $textColor;
+				border-radius: 4px;
+			}
+			@include Responsive(SM) {
+				margin-right: 16px;
+				width: 46px;
+				height: 46px;
+			}
+		}
+		.color-bg {
+			height: 100%;
+			&-yellow {
+				background-color: #e6ae48;
+			}
+			&-black {
+				background-color: #030102;
+			}
+			&-red {
+				background-color: #9c0001;
+			}
+		}
+		select {
+			height: 30px;
+			width: 120px;
+			font-size: 1.6rem;
+			color: $textColor;
+			padding-left: 10px;
+			border: $borderDefault;
+			@include Responsive(SM) {
+				height: 46px;
+				width: 240px;
+				font-size: 2rem;
+			}
+		}
+		.options-wrap {
+			@include display-flex;
+			a.btn.btn-addto-cart{
+				color: white;
+				@include Responsive(SM) {
+					width: 240px;
+					height: 46px
+				}
+			}
+			@include Responsive(SM) {
+				@include flex-direction(column);
+			}
+		}
+		.quantity-wrap {
+			width: 120px;
+			height: 30px;
+			background-color: $inputBackground;
+			@include display-flex;
+			@include justify-content(space-around);
+			@include align-items(center);
+			padding: 2px 0;
+			margin-right: 15px;
+			span {
+				font-size: 2rem;
+				width: 25%;
+				font-weight: 700;
+				cursor: pointer;
+				@include flexbox;
+				&:hover{
+					background-color: $textHoverColor;
+				}
+				@include Responsive(SM) {
+					height: 100%;
+					font-size: 3.2rem;
+				}
+			}
+			input {
+				width: 50%;
+				border: none;
+				font-size: 1.4rem;
+				text-align: center;
+				font-weight: 700;
+				@include Responsive(SM) {
+					height: 100%;
+					font-size: 2rem;
+				}
+			}
+			@include Responsive(SM) {
+				width: 240px;
+				height: 50px;
+				padding: 4px 0;
+				margin-bottom: 12px;
+			}
+		}
+	}
+	.detail-desc {
+		margin-top: 60px;
+		min-height: 300px;
+		@include Responsive(SM) {
+			margin-top: 30px;
+		}
+	}
+	.detail-banners {
+		margin-top: 0;
+		img{
+			width: 100%;
+		}
+	}
+	.detail-related {
+		margin-top: 100px;
+		@include Responsive(SM) {
+			margin-top: 30px;
+		}
+		.list-product {
+			margin-bottom: 40px;
+		}
+	}
+}

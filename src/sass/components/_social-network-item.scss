@@ -1,0 +1,61 @@
+.social-item {
+    margin-right: 12px;
+    margin-bottom: 12px;
+    @include flexbox;
+    .social-logo {
+        border-radius: 4px;
+        padding: 2px 6px;
+        margin-right: 0 !important;
+        font-size: 1.3rem;
+        font-family:'Gill Sans', sans-serif;
+        border: $likedLogoBorder;
+        color: white !important;
+        height: 100%;
+        @include flexbox;
+        &.fb {
+            background-color: $fbBackground;
+            border: none;
+        }
+        &.twitter {
+            background-color: $twitterBackground;
+            color: black !important;
+            i {
+                color: $twitterColor;
+            }
+        }
+        &.google {
+            i {
+                color: $googleColor !important;
+            }
+        }
+        &.linkedin {
+            background-color: $linkedinBackground;
+        }
+        &.printerest {
+            color: $priterestColor !important;
+        }
+    }
+    .social-popover {
+        min-width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        border: $popoverBorder;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 1.3rem;
+        position: relative;
+        background-color: white;
+        &::after {
+            content: "";
+            height: 5px;
+            width: 5px;
+            border-top: $popoverBorder;
+            border-left: $popoverBorder;
+            position: absolute;
+            left: -2px;
+            top: 50%;
+            background-color: white;
+            @include transform(rotate(-45deg) translateY(-50%))
+        }
+    }
+}

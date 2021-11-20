@@ -35,9 +35,21 @@ mixin listProduct(list)
 	ul(class="row g-5")&attributes(attributes)
 		each val in list 
 			+productItem(val.type, val.img, val.name, val.price, val.oldPrice)
+
+mixin productsSection(list, title)
+	h2= title
+	div.decorate
+		img(src="/assets/img/intro-decorate.png", alt="decorate")
+	.product-wrap.container-fluid
+		+listProduct(list)
+		.prev-btn 
+			i(class="fas fa-arrow-left")
+		.next-btn 
+			i(class="fas fa-arrow-right")
+	+dots
 			
 mixin addCartBtn 
-	a.btn.btn-addto-cart ADD TO CART
+	a(href="cart.html" class="btn btn-addto-cart")&attributes(attributes) ADD TO CART
 
 mixin saleLabel 
 	.item-type.position-absolute
@@ -230,3 +242,75 @@ mixin formGroup(type, name, id, label)
 		.form-group
 			label(for = id)= label
 			input(type = type, name = name, id = id)
+			
+mixin tabsList(list)
+	ul.image-items.nav.h-100(role="tablist")
+		each item in list
+			if item.active
+				li.image-item
+					a.image-link.d-block.h-100.active(href="javascript:void(0)", id=item.id, data-bs-toggle="tab", data-bs-target='#'+ item.paneid, role="tab", aria-selected="true")
+						img(src= item.img, alt= item.name)
+			else 
+				li.image-item
+					a.image-link.d-block.h-100(href="javascript:void(0)", id=item.id data-bs-toggle="tab", data-bs-target='#'+ item.paneid, role="tab", aria-selected="false")
+						img(src= item.img, alt= item.name)
+
+mixin imagesList(list)
+	each item in list 
+		if item.active
+			img.tab-pane.active(src= item.img, alt=item.name, role="tabpanel", id= item.id, aria-labelledby= item.tabid)
+		else 
+			img.tab-pane(src= item.img, alt=item.name, role="tabpanel", id= item.id, aria-labelledby= item.tabid)
+
+mixin stars(num)
+	span.stars
+		each val in [1,2,3,4,5]
+			if val < num
+				i(class="fas fa-star")
+			else if val == num 
+				i(class="fas fa-star-half-alt")
+			else 
+				i(class="far fa-star")
+
+mixin optionColor(list)
+	.colors
+		each item in list 
+			if item.active 
+				.color.active 
+					.color-bg(class=`color-bg-${item.color}`)
+			else
+				.color
+					.color-bg(class=`color-bg-${item.color}`)
+
+mixin socialItem(socialName, socialLogo, socialLabel, popover)
+	.social-item 
+		a(href="javascript:void(0)" class=`social-logo ${socialName}`)
+			i(class= socialLogo)
+			if socialLabel
+				span= socialLabel
+		if popover 
+			.social-popover= popover
+
+mixin socialList(list)
+	each item in list
+		+socialItem(item.socialName, item.socialLogo, item.socialLabel, item.popover)
+
+mixin tabPanes(list)
+	ul.nav.nav-pills(role = "tablist")
+		each item in list
+			if item.active
+				li.tab-item
+					button(class= "active", id= item.tabId, data-bs-toggle= "pill", data-bs-target= `#${item.tabpaneId}`, type= "button", role="tab", aria-controls= item.tabpaneId, aria-selected= "true")= item.tabName
+			else
+				li.tab-item
+					button(id= item.tabId, data-bs-toggle= "pill", data-bs-target= `#${item.tabpaneId}`, type= "button", role="tab", aria-controls= item.tabpaneId, aria-selected= "false")= item.tabName
+	.tab-content
+		each item in list
+			if item.active
+				.tab-pane.active(id= item.tabpaneId, role="tabpanel", aria-labelledby= item.tabId)
+					if item.content
+						p= item.content
+			else 
+				.tab-pane(id= item.tabpaneId, role="tabpanel", aria-labelledby= item.tabId)
+					if item.content
+						p= item.content
