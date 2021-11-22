@@ -1,0 +1,40 @@
+extends ../layouts/layout
+
+block content
+	.main-contact.main-content
+		section.direction
+			+breadcrumb(contactBreadcrumbItems)
+		section.contact-heading
+			+sectionHeader("LIÊN HỆ")
+		section.contact-content
+			.contact-info.row.g-5
+				.contact-map.col-12.col-sm-8
+					iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.873512670965!2d105.80821461445477!3d21.037746492848495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab146438e693%3A0xcb7701dcb90d3314!2sT%C3%B2a%20Nh%C3%A0%20Vp%20Hanoi%20Group!5e0!3m2!1sen!2s!4v1637218098701!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy")
+				.contact-detail.col-12.col-sm-4
+					.logo 
+						img(src="/assets/img/logo.png", alt="logo")
+						.logo-text 
+							span Wine hourse
+							span Since 1980
+							img(src="/assets/img/logo1.png", alt="logo")
+					.contact-address 
+						i(class="fas fa-map-marker-alt")
+						p Tầng 4, Tòa nhà Hanoi Group Số 442 Đội Cấn, P. Cống Vị, Q. Ba Đình, Hà Nội
+					.contact-phone 
+						i(class="fas fa-phone")
+						span (04) 6674 2332
+					.contact-mail 
+						i(class="fas fa-envelope") 
+						a(href="mailto:support@milano.com") support@milano.com
+					.contact-follows 
+						span FOLLOW US
+						.follows-item 
+							i(class="fab fa-twitter")
+							i(class="fab fa-google-plus-g")
+							i(class="fab fa-linkedin-in")
+			.contact-form.row.g-5
+				form.form(action="#").col-12.col-md-8
+					+formGroup("text", "name", "name", "Your name")
+					+formGroup("email", "email", "email", "Your email")
+					+formGroup("textarea", "subject", "subject", "Subject")
+					+formGroup("submit")
