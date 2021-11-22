@@ -55,7 +55,7 @@
     left: 0;
     top: 0;
     width: 265px;
-    @include Responsive(XL) {
+    @include Responsive(desktop) {
         width: 200px;
     }
     @include Responsive(SM) {

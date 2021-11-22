@@ -1,0 +1,45 @@
+extends ../layouts/layout
+
+block content
+	.main-orders.main-content 
+		section.direction
+			+breadcrumb(ordersBreadcrumbItems)
+		section.orders-heading
+			+sectionHeader("ĐƠN HÀNG")
+		section.orders-content
+			.row.g-5
+				.orders-wrap.col-xl-9
+					.order-nav
+						h3 DANH SÁCH ĐƠN HÀNG 
+						+orderNav(ordersList)
+					.order-list
+						table
+							thead
+								tr 
+									td STT
+									td MÃ ĐƠN HÀNG/NGÀY MUA HÀNG
+									td KHO NHẬN HÀNG
+									td SỐ SẢN PHẨM
+									td TỔNG TIỀN
+									td TÌNH TRẠNG
+									td THAO TÁC
+							tbody
+								+orderContentList(odersContentList)
+				.orders-user.col-xl-3
+					.user-info-wrap
+						h3 THÔNG TIN KHÁCH HÀNG
+						.user-info-item
+							i(class="fas fa-user")
+							.user-info-text
+								span GiangLe
+								span leanhgiang89@gmail.com
+						.user-info-item
+							i(class="fas fa-map-marker-alt")
+							.user-info-text
+								span Tòa nhà Hà Nội Group
+								span 42 Đội Cấn Ba Đình Hà Nội
+						.user-info-item
+							i(class="fas fa-phone-volume")
+							span (04) 3786 8904
+						.user-info-item
+							a(href="user-address.html") Chi tiết địa chỉ

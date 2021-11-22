@@ -32,11 +32,11 @@
 		-webkit-box-direction: normal;
     	-ms-flex-direction: column;
         flex-direction: column;
-	} @else if $content == column-reverses {
+	} @else if $content == column-reverse {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: reverse;
-    	-ms-flex-direction: column-reverses;
-        flex-direction: column-reverses;	
+    	-ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;	
 	}
 }
 
@@ -107,8 +107,9 @@
 $XXS: 375px;
 $XS: 479px;   
 $SM: 768px;  
-$MD: 992px;   
-$XL: 1200px;     
+$MD: 992px;
+$LG: 1024px;  
+$XL: 1200px;  //desktop
 
 // media queries
 @mixin Responsive($canvas) {
@@ -124,13 +125,16 @@ $XL: 1200px;
 	@else if $canvas == LTAB {
 		@media only screen and (min-width: ($SM + 1px)) and (max-width: $MD) { @content; } 
 	}
+	@else if $canvas == LG {
+		@media only screen and (max-width: $LG) { @content; } 
+	}
 	@else if $canvas == MD {
 		@media only screen and (max-width: $MD) { @content; } 
 	}
 	@else if $canvas == mMD {
 		@media only screen and (min-width: $MD) { @content; } 
 	}
-	@else if $canvas == XL {
+	@else if $canvas == desktop {
 		@media only screen and (max-width: $XL) { @content; } 
 	}
 	@else if $canvas == XXS {
