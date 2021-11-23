@@ -3,16 +3,7 @@ extends ../layouts/layout
 block content
 	.main-products.main-content 
 		section.direction
-			nav.direction-nav 
-				ul.direction-list
-					li.direction-item 
-						a(href="index.html") Trang chủ
-						span /
-					li.direction-item 
-						a(href="products.html") Sản phẩm
-						span /
-					li.direction-item.active
-						a(href="products.html") Rượu vang đỏ
+			+breadcrumb(productBreadcrumbItems)
 		section.products-banners 
 			img.w-100(src="/assets/img/products-banners.jpg", alt="products-banner") 
 		section.products-content.row.g-5

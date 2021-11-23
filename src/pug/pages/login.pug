@@ -1,0 +1,25 @@
+extends ../layouts/layout
+
+block content
+	.main-login.main-content
+		section.direction
+			+breadcrumb(loginBreadcrumbItems)
+		section.login-heading
+			.login-heading-left
+				+sectionHeader("ĐĂNG NHẬP")
+			.login-heading-right
+				a(href="register.html" class="btn btn-default") ĐĂNG KÝ 
+		section.login-content
+			form.form.login-form(action="#")
+				h3 KHÁNH HÀNG ĐĂNG NHẬP 
+				p.form-message Nếu có một tài khoản, xin vui lòng đăng nhập
+				.form-group
+					label(for="login-email") Email*
+					input(type="email" name="email" id="login-email")
+				.form-group
+					label(for="login-password") Password*
+					input(type="password" name="password" id="login-password")
+				.form-group
+					a(href="javascript:void(0)") Quên mật khẩu
+				.form-group
+					button(type="submit" class="btn btn-default") ĐĂNG NHẬP
