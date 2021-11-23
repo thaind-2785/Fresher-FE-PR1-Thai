@@ -34,7 +34,7 @@ block content
 							i(class="fab fa-linkedin-in")
 			.contact-form.row.g-5
 				form.form(action="#").col-12.col-md-8
-					+formGroup("text", "name", "name", "Your name")
-					+formGroup("email", "email", "email", "Your email")
-					+formGroup("textarea", "subject", "subject", "Subject")
-					+formGroup("submit")
+					+formGroup({ type: "text", name: "name", id: "name", label: "Your name" })
+					+formGroup({ type: "email", name: "email", id: "email", label: "Your email" })
+					+formGroup({ type: "textarea", name: "subject", id: "subject", label: "Subject" })
+					+formGroup({ type: "submit", label: "GỬI" })

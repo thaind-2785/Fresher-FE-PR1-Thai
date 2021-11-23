@@ -1,0 +1,22 @@
+extends ./login.pug
+
+block logBreadcrumb
+	+breadcrumb(signupBreadcrumbItems)
+block logTitle
+	+sectionHeader("ĐĂNG KÝ")
+block logHeaderBtn
+	a(href="login.html" class="btn btn-default") ĐĂNG NHẬP
+block logForm
+	form.form.signup-form(action="#")
+		h3 THÔNG TIN CÁ NHÂN
+		+formGroup({ type: "text", name: "signup-fist-name", id: "signup-fist-name", label: "Tên trước *" })
+		+formGroup({ type: "text", name: "signup-last-name", id: "signup-last-name", label: "Tên sau *" })
+		+formGroup({ type: "email", name: "signup-email", id: "signup-email", label: "Email *" })
+		+formGroup({ type: "password", name: "signup-email-password", id: "signup-email-password", label: "Password*" })
+		+formGroup({ type: "checkbox", name: "receive-info", id: "receive-info", label: "Đăng ký nhận bản tin" })
+		h3 THÔNG TIN ĐĂNG NHẬP
+		+formGroup({ type: "password", name: "signup-password", id: "signup-password", label: "Mật khẩu *" })
+		+formGroup({ type: "password", name: "signup-cf-password", id: "signup-cf-password", label: "Nhập lại mật khẩu *" })
+		.form-group
+			button(type="submit" class="btn btn-default") GỬI
+			a(href="index.html" class="btn btn-default") QUAY LẠI

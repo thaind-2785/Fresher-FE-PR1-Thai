@@ -24,7 +24,7 @@ block content
 			section.special.row.g-5
 				+specialItem
 			section.list-product
-				+productsSection(newList, "SẢN PHẨM MỚI")
+				+productsSection({ list: newList, title: "SẢN PHẨM MỚI" })
 			section.banners
 				.banners-wrap
 					.row.g-0
@@ -32,7 +32,7 @@ block content
 							+bannerItem("/assets/img/banners/banner" + val + ".png", val)
 				+dots
 			section.list-product
-				+productsSection(bestSellList, "SẢN PHẨM BÁN CHẠY")
+				+productsSection({ list: bestSellList, title: "SẢN PHẨM BÁN CHẠY" })
 			section.news-comments
 				.container-fluid 
 					.row.g-5 

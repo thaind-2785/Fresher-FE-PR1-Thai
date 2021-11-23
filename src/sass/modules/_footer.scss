@@ -68,7 +68,7 @@
                             font-size: 1.2rem;
                             font-style: italic;
                             color: $textColor;
-                            border: 1px solid $borderColor;
+                            border: $borderDefault;
                             border-right: none;
                             @include Responsive(SM) {
                                 font-size: 1.6rem;
@@ -125,7 +125,7 @@
     }
     .footer-copyright {
         margin-top: 40px;
-        border-top: 1px solid $borderColor;
+        border-top: $borderDefault;
         padding: 12px 0;
         .footer-wrap {
             height: 100%;

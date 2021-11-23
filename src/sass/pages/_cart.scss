@@ -13,17 +13,17 @@
                 font-size: 1.4rem;
                 text-align: center;
                 height: 54px;
-                border: 1px solid $borderColor;
+                border: $borderDefault;
             }
             tr {
-                border: 1px solid $borderColor;
+                border: $borderDefault;
             }
             td {
                 font-size: 1.4rem;
                 text-align: center;
                 padding-top: 20px;
                 padding-bottom: 20px;
-                border: 1px solid $borderColor;
+                border: $borderDefault;
                 height: 200px;
                 &.cart-img {
                     width: 16.66667%;
