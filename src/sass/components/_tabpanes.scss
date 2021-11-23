@@ -1,0 +1,29 @@
+.detail-tabs {
+    margin-top: 0;
+    .nav {
+        min-height: 36px;
+        margin-bottom: 18px;
+        @include Responsive(SM) {
+            border-bottom: $borderDefault;
+            border-top: $borderDefault;
+            padding-top: 10px;
+        }
+    }
+    .tab-item {
+        @include Responsive(SM) {
+            margin-bottom: 10px;
+        }
+    }
+    button {
+        height: 100%;
+        border: none;
+        font-size: 2rem;
+        padding: 0 10px;
+        background-color: white;
+        color: $textColor;
+        &.active, &:hover {
+            background-color: $textHoverColor;
+            color: white;
+        }
+    }
+}

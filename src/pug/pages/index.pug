@@ -24,16 +24,7 @@ block content
 			section.special.row.g-5
 				+specialItem
 			section.list-product
-				h2 SẢN PHẨM MỚI
-				div.decorate
-					img(src="/assets/img/intro-decorate.png", alt="decorate")
-				.new-wrap.container-fluid
-					+listProduct(newList)
-					.prev-btn 
-						i(class="fas fa-arrow-left")
-					.next-btn 
-						i(class="fas fa-arrow-right")
-				+dots
+				+productsSection(newList, "SẢN PHẨM MỚI")
 			section.banners
 				.banners-wrap
 					.row.g-0
@@ -41,16 +32,7 @@ block content
 							+bannerItem("/assets/img/banners/banner" + val + ".png", val)
 				+dots
 			section.list-product
-				h2 SẢN PHẨM BÁN CHẠY
-				div.decorate
-					img(src="/assets/img/intro-decorate.png", alt="decorate")
-				.new-wrap.container-fluid
-					+listProduct(bestSellList)
-					.prev-btn 
-						i(class="fas fa-arrow-left")
-					.next-btn 
-						i(class="fas fa-arrow-right")
-				+dots
+				+productsSection(bestSellList, "SẢN PHẨM BÁN CHẠY")
 			section.news-comments
 				.container-fluid 
 					.row.g-5 

@@ -1,0 +1,66 @@
+extends ../layouts/layout
+
+block content
+	.main-detail 
+		section.direction
+			+breadcrumb(detailBreadcrumbItems)
+		section.detail-content
+			.row.g-5
+				.detail-images.col-12.col-lg-7
+					.images-tabs
+						.control-up
+							i(class="fas fa-arrow-up")
+						.images-list
+							+tabsList(tabsList)
+						.control-down
+							i(class="fas fa-arrow-down")
+					.images-main.tab-content
+						+imagesList(imagesList)
+				.detail-options.col-12.col-lg-5
+					form.form-detail-options(action="#")
+						+sectionHeader("RƯỢU NHO NĂM 1997")
+						.options-price 300.000đ
+						.options-star 
+							+stars(4)
+							a(href="javascript:void(0)").reviews 1 Review(S)
+							a(href="javascript:void(0)").reviews-btn Add your review
+						.form-group
+							label MÀU SẮC 
+							+optionColor(detailOptionColors)
+						.form-group
+							label(for="size") KÍCH CỠ
+							select(id="size").d-block
+								option(value="large") Loại to 
+								option(value="medium") Loại vừa
+								option(value="small") Loại nhỏ
+						.form-group
+							label(for="quantity") SỐ LƯỢNG 
+							.options-wrap 
+								.quantity-wrap
+									span(role="button") -
+									input(type = "text" id="quantity" value = 3)
+									span(role="button") +
+								+addCartBtn(role="button" type="submit")
+						.form-group
+							a(href="javacript:void(0)")
+								i(class="fas fa-heart")
+								span Yêu thích 
+							a(href="javacript:void(0)")
+								i(class="far fa-chart-bar")
+								span So sánh 
+							a(href="javacript:void(0)")
+								i(class="fas fa-envelope")
+								span Email
+						.form-group 
+							label MÔ TẢ
+							p Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo. 
+						.form-group.d-flex.flex-wrap
+							+socialList(socialList)
+			.row.g-5.detail-desc.align-items-center
+				.detail-tabs.col-12.col-lg-8.align-self-start
+					+tabPanes(detailTabs)
+				.detail-banners.col-0.col-md-4
+					img(src="/assets/img/banners/detail-banners.png", alt="rượu nho")
+			.row.g-5.detail-related
+				.list-product
+					+productsSection(detailRelatedList, "SẢN PHẨM LIÊN QUAN")
