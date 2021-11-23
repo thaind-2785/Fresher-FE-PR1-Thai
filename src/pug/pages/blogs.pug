@@ -1,0 +1,10 @@
+extends ../layouts/layout
+
+block content
+	.main-blogs.main-content 
+		section.direction
+			+breadcrumb(blogsBreadcrumbItems)
+		section.blogs-heading
+			+sectionHeader("BLOG")
+		section.blogs-content
+			+newsList(blogsList)
