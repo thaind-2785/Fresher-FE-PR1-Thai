@@ -1,8 +1,8 @@
 .form {
     margin-top: 0;
     .form-group {
-        @include display-flex;
         margin-bottom: 15px;
+        @include display-flex;
         @include align-items(baseline);
         label {
             width: 100px;
@@ -12,9 +12,9 @@
         input, textarea {
             background-color: #fafafa;
             border: 1px solid $borderColor;
-            @include flex(1);
             height: 40px;
             font-size: 1.4rem;
+            @include flex(1);
         }
         textarea {
             height: 160px;
@@ -34,9 +34,9 @@
                 margin-bottom: 6px
             }
             input, textarea {
-                @include flex(unset);
                 width: 100%;
                 font-size: 1.6rem;
+                @include flex(unset);
             }
         }
     }

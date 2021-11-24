@@ -132,8 +132,8 @@ mixin dots
 		.dot 
 		.dot
 
-mixin newsItem(title, author, date, comments, desc, img)
-	.news-item 
+mixin newsItem(title, author, date, comments, desc, img, itemClass)
+	.news-item(class= itemClass)
 		a.news-img.d-block(href="news.html") 
 			img(src=img, alt="news")
 			div
@@ -147,9 +147,9 @@ mixin newsItem(title, author, date, comments, desc, img)
 		a.readmore(href="news.html") Read more 
 
 mixin newsList(list)
-	.news-list.row
+	.news-list.row.g-5
 		each val in list 
-			+newsItem(val.title, val.author, val.date, val.comments, val.desc, val.img)
+			+newsItem(val.title, val.author, val.date, val.comments, val.desc, val.img, val.itemClass)
 
 mixin commentItem 
 	.comment-item
