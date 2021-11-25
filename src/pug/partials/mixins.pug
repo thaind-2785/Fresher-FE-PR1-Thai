@@ -36,7 +36,7 @@ mixin listProduct(list)
 		each val in list 
 			+productItem(val.type, val.img, val.name, val.price, val.oldPrice)
 
-mixin productsSection(list, title)
+mixin productsSection({ list, title })
 	h2= title
 	div.decorate
 		img(src="/assets/img/intro-decorate.png", alt="decorate")
@@ -113,7 +113,7 @@ mixin userNavItem(text, state)
 			when "Đăng nhập"
 				a.user-link(href="login.html")= text
 			when "Đăng ký"
-				a.user-link(href="register.html")= text
+				a.user-link(href="signup.html")= text
 			default 
 				a.user-link(href="javascript:void(0)")= text
 
@@ -230,14 +230,21 @@ mixin cartList(list)
 	each val in list 
 		+cartItem(val)
 
-mixin formGroup(type, name, id, label)
-	if type == "submit"
+mixin formGroup({ type, name, id, label, link })
+	if type == "link"
 		.form-group
-			button(type="submit").btn.btn-default GỬI
+			a(href= link)= label
+	else if type == "submit"
+		.form-group
+			button(type="submit").btn.btn-default= label
 	else if type == "textarea"
 		.form-group
 			label(for = id)= label
 			textarea(name = name, id = id)
+	else if type == "checkbox"
+		.form-group
+			input(type = "checkbox" name = name, id = id)
+			label(for = id)= label
 	else
 		.form-group
 			label(for = id)= label

@@ -8,7 +8,7 @@
                 &.show {
                     display: block;
                 }
-                border: 1px solid $borderColor;
+                border: $borderDefault;
                 position: absolute;
                 background-color: white;
                 height: 100vh;
@@ -110,7 +110,7 @@
                     color: $textColor;
                     font-size: 1.4rem;
                     display: inline-block;
-                    border: 1px solid $borderColor;
+                    border: $borderDefault;
                     margin-right: 8px;
                     margin-bottom: 8px;
                     min-width: 30px;
@@ -135,8 +135,8 @@
             .products-wrap {
                 .products-pagination {
                     height: 36px;
-                    border-top: 1px solid $borderColor;
-                    border-bottom: 1px solid $borderColor;
+                    border-top: $borderDefault;
+                    border-bottom: $borderDefault;
                     padding-right: 15px;
                     @include display-flex;
                     @include justify-content(space-between);

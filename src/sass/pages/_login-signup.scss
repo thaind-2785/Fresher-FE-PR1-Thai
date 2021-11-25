@@ -1,0 +1,15 @@
+.login-heading {
+    @include display-flex;
+    @include justify-content(space-between);
+}
+.login-content {
+    margin-top: 30px;
+    border: $borderDefault;
+    padding: 56px;
+    @include Responsive(XS) {
+        padding: 20px;
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+}

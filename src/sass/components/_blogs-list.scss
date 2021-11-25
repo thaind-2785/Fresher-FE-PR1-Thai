@@ -61,7 +61,7 @@
         }
         &:not(:first-child) {
             padding: 0 8px;
-            border-left: 1px solid $borderColor;
+            border-left: $borderDefault;
         }
         &:first-child {
             padding-right: 8px;
