@@ -1,0 +1,29 @@
+.address-content {
+    margin-top: 30px;
+    .address-wrap {
+        @include Responsive(desktop) {
+            @include flex-direction(column-reverse)
+        }
+    }
+    .address-form-list {
+        .form {
+            border-bottom: $borderDefault;
+        }
+        h3 {
+            font-size: 2rem;
+        }
+    }
+    .address-form-add {
+        & > a {
+            font-size: 1.8rem;
+            text-decoration: underline;
+            color: $addressBtnColor;
+        }
+    }
+    .address-list {
+        @include Responsive(smallDesktop) {
+            @include display-flex;
+            @include flex-direction(column-reverse)
+        }
+    }
+}

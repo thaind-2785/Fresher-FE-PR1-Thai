@@ -49,12 +49,8 @@ mixin headerUser
 				.user-menu 
 					i(class="fas fa-sort-down")
 				ul.user-list
-					+userNavItem("Tài khoản của tôi")
-					+userNavItem("Trạng thái đơn hàng")
-					+userNavItem("Danh sách ưa thích")
-					+userNavItem("Giỏ hàng")
-					+userNavItem("Đăng nhập")
-					+userNavItem("Đăng ký")
+					each item in navItems
+						+userNavItem(item)
 			nav.user-nav
 				ul.user-search 
 					li.search
