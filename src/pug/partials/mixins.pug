@@ -314,3 +314,27 @@ mixin tabPanes(list)
 				.tab-pane(id= item.tabpaneId, role="tabpanel", aria-labelledby= item.tabId)
 					if item.content
 						p= item.content
+mixin orderNav(list)
+	ul
+		each val in list
+			li
+				a(href="javascript:void(0)")= val.state + '(' + val.quantity + ')'
+
+mixin orderContentList(list)
+	each val in list
+		- const { id, code, date, store, quantity, total, state } = val
+		tr 
+			td
+				span= id
+			td.code-date
+				span= code
+				span= date
+			td
+				span= store
+			td
+				span= quantity
+			td
+				span= total 
+			td
+				span= state
+			td Chi tiết

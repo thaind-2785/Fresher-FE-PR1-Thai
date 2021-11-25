@@ -280,7 +280,7 @@ header {
 						}
 					}
 				}
-				@include Responsive(XL) {
+				@include Responsive(desktop) {
 					width: 70vw;
 					left: -10vw;
 				}

@@ -1,0 +1,118 @@
+.orders-content {
+    margin-top: 30px;
+    & > .row {
+        @include Responsive(desktop) {
+            @include flex-direction(column-reverse);
+        }
+    }
+    .order-nav {
+        padding: 24px 24px 20px;
+        background-color: $tableBackground;
+        border: $borderDefault;
+        ul {
+            @include display-flex;
+            @include flexwrap(wrap);
+            margin-bottom: 0;
+            margin-top: 10px;
+            li {
+                padding: 0 10px;
+                margin-bottom: 6px;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 1px;
+                    height: 60%;
+                    right: 0;
+                    top: 50%;
+                    background-color: $textColor;
+                    @include transform(translateY(-50%));
+                }
+                &:first-child {
+                    padding-left: 0;
+                }
+                a {
+                    font-size: 1.4rem;
+                    color: $textColor;
+                    @include Responsive(SM) {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+    .order-list {
+        border: $borderDefault;
+        border-top: none;
+        table {
+            width: 100%;
+            font-size: 1.4rem;
+            color: $textColor;
+            text-align: center;
+            @include Responsive(SM) {
+                font-size: 1.6rem;
+            }
+            thead {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: black;
+                @include Responsive(SM) {
+                    font-size: 1.4rem;
+                }
+            }
+            tr {
+                height: 40px;
+            }
+            td {
+                border-right: $borderDefault;
+                border-left: $borderDefault;
+                &:nth-child(1) {
+                    width: 5%;
+                }
+                &:nth-child(2) {
+                    width: 30%;
+                    span:last-child {
+                        display: block;
+                    }
+                }
+            }
+        }
+        @include Responsive(XS) {
+            overflow-x: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            table {
+                width: 900px;
+            }
+        }
+    }
+    .orders-user {
+        .user-info-wrap {
+            background-color: $tableBackground;
+            border: $borderDefault;
+            padding: 24px;
+        }
+        .user-info-item {
+            @include display-flex;
+            font-size: 1.6rem;
+            margin-top: 10px;
+            i {
+                margin-right: 15px;
+            }
+            .user-info-text {
+                span {
+                    display: block;
+                }
+            }
+            a {
+                color: black;
+                text-decoration: underline;
+                &:hover {
+                    color: $textHoverColor;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
