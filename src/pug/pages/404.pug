@@ -1,0 +1,19 @@
+include ../partials/mixins
+include ../partials/variable
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet")
+		link(href="/assets/css/style.css" rel="stylesheet")
+		title 404 - Not found
+	body
+		.error-page
+			img(src="/assets/img/404.png", alt="404 page")
+			.error-page-option
+				.black-logo
+					img(src="/assets/img/logo-black.png", alt="logo")
+				+errorPageNav(errorNavList)

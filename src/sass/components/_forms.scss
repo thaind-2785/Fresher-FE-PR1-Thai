@@ -43,6 +43,26 @@
                 margin-left: 0
             }
         }
+        &.form-group-checkbox {
+            margin-bottom: 22px;
+            @include align-items(center);
+            @include Responsive(XS) {
+                @include flex-direction(row);
+            }
+            label {
+                width: unset;
+                @include Responsive(XS) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &.label-xs-width-unset {
+            @include Responsive(XS) {
+                label {
+                    width: unset;
+                }
+            }
+        }
         @include Responsive(XS) {
             @include flex-direction(column);
             label {
@@ -83,19 +103,6 @@
         }
     }
     &.signup-form {
-        .form-group:nth-of-type(5) {
-            margin-bottom: 22px;
-            @include align-items(center);
-            @include Responsive(XS) {
-                @include flex-direction(row);
-            }
-            label {
-                width: unset;
-                @include Responsive(XS) {
-                    margin-bottom: 0;
-                }
-            }
-        }
         .form-group:last-child {
             @include justify-content(flex-end);
             @include Responsive(XS) {
@@ -110,13 +117,6 @@
                 @include Responsive(SM) {
                     width: 150px;
                     font-size: 1.6rem;
-                }
-            }
-        }
-        .form-group:nth-of-type(7) {
-            @include Responsive(XS) {
-                label {
-                    width: unset;
                 }
             }
         }
@@ -140,27 +140,7 @@
                 @include flex-direction(row)
             }
         }
-        .form-group:nth-of-type(9) {
-            margin-bottom: 22px;
-            @include align-items(center);
-            @include Responsive(XS) {
-                @include flex-direction(row);
-            }
-            label {
-                width: unset;
-                @include Responsive(XS) {
-                    margin-bottom: 0;
-                }
-            }
-        }
         .form-group {
-            &.label-xs-width-unset {
-                @include Responsive(XS) {
-                    label {
-                        width: unset;
-                    }
-                }
-            }
             input, select {
                 background-color: white;
                 font-size: 1.6rem;

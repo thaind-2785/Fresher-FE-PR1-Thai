@@ -233,13 +233,19 @@ mixin formGroup({ type, name, id, label, link })
 			label(for = id)= label
 			textarea(name = name, id = id)
 	else if type == "checkbox"
-		.form-group
+		.form-group.form-group-checkbox
 			input(type = "checkbox" name = name, id = id)
 			label(for = id)= label
 	else
-		.form-group
-			label(for = id)= label
-			input(type = type, name = name, id = id)
+		case id
+			when "signup-cf-password"
+				.form-group.label-xs-width-unset
+					label(for = id)= label
+					input(type = type, name = name, id = id)
+			default
+				.form-group
+					label(for = id)= label
+					input(type = type, name = name, id = id)
 			
 mixin tabsList(list)
 	ul.image-items.nav.h-100(role="tablist")
@@ -382,7 +388,7 @@ mixin addressForm({ list, isDisable, type })
 						.form-group
 							label(for= id)= label
 							input(type="text" id= id, name= id, value= value)
-			.form-group
+			.form-group.form-group-checkbox
 				input(type="checkbox" id="set-defaul-address")
 				label(for="set-defaul-address") Đặt làm địa chỉ mặc định?
 			.form-group
@@ -392,3 +398,15 @@ mixin addressForm({ list, isDisable, type })
 				else
 					button(type="submit" class="btn btn-update-address") Chỉnh sửa địa chỉ
 					button(class="btn btn-default") Xóa
+
+mixin errorPageNav(list)
+	ul
+		each item in list
+			- const { type, path, title } = item
+			if (type == "input")
+				li
+					i(class="fas fa-search")
+					input(type="text")
+			else
+				li
+					a(href=path)= title
