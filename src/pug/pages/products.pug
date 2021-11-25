@@ -21,9 +21,7 @@ block content
 				+sectionHeader('SO SÁNH SẢN PHẨM')
 				.category-compare Bạn chưa có sản phẩm để so sánh
 				+sectionHeader('TAG SẢN PHẨM')
-				.category-tags 
-					each val in tagsProducts
-						span= val
+				+categoryTags(tagsProducts)
 				.category-banners 
 					img.w-100(src="/assets/img/products-category.png", alt="category-banner")
 			.products-list.col-lg-9.col-12.col-sm-8

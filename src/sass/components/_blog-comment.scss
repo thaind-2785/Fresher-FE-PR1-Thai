@@ -1,0 +1,53 @@
+.blog-comments {
+    margin-top: 65px;
+    h3 {
+        font-size: 1.8rem;
+    }
+    .comment-item {
+        color: $textColor;
+        margin-top: 30px;
+    }
+    .comment-header {
+        padding: 15px 20px;
+        border-radius: 5px;
+        background-color: $commentHeaderBg;
+        font-style: italic;
+        color: black;
+        font-size: 1.6rem;
+        span:first-child {
+            padding-right: 30px;
+            border-right: $borderDefault;
+        }
+        span:last-child {
+            padding-left: 15px;
+        }
+    }
+    .comment-content {
+        padding: 20px 20px 0;
+    }
+    .pagination {
+        @include justify-content(flex-end);
+        margin-top: 50px;
+        .page-item {
+            height: 36px;
+            width: 36px;
+            margin-left: 15px;
+            &:first-child, &:last-child {
+                a {
+                    background-color: black;
+                    color: white;
+                }
+            }
+        }
+        .page-link {
+            color: black;
+            font-size: 1.6rem;
+            height: 100%;
+            @include flexbox;
+            &.active {
+                color: white;
+                background-color: $activePaginationBg;
+            }
+        }
+    }
+}

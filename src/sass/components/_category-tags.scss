@@ -1,0 +1,16 @@
+.category-tags {
+    span {
+        padding: 4px 10px;
+        color: $textColor;
+        font-size: 1.4rem;
+        display: inline-block;
+        border: $borderDefault;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        min-width: 30px;
+        &:hover {
+            background-color: $textHoverColor;
+            color: white;
+        }
+    }
+}

@@ -124,7 +124,7 @@ mixin dots
 
 mixin newsItem(title, author, date, comments, desc, img, itemClass)
 	.news-item(class= itemClass)
-		a.news-img.d-block(href="news.html") 
+		a.news-img.d-block(href="blog-detail.html") 
 			img(src=img, alt="news")
 			div
 				i(class="fas fa-link")
@@ -134,7 +134,7 @@ mixin newsItem(title, author, date, comments, desc, img, itemClass)
 			span= date
 			span= comments + ' bình luận'
 		p= desc 
-		a.readmore(href="news.html") Read more 
+		a.readmore(href="blog-detail.html") Read more 
 
 mixin newsList(list)
 	.news-list.row.g-5
@@ -410,3 +410,40 @@ mixin errorPageNav(list)
 			else
 				li
 					a(href=path)= title
+
+mixin newBlogItem(img, title, date)
+	li.blog-news-item
+		a.blog-news-link(href="blog-detail.html")
+			.blog-img
+				img(src= img, alt="blog")
+			.blog-title
+				h3= title
+				span
+					i(class="far fa-calendar-alt")
+					span= date 
+
+mixin newBlogList(list)
+	ul.blog-news-list
+		each item in list
+			- const {img, title, date} = item
+			+newBlogItem(img, title, date)
+
+mixin categoryTags(list)
+	.category-tags 
+		each item in list
+			span= item
+
+mixin blogCommentItem(userName, time, content)
+	.comment-item
+		.comment-header
+			span= `Bình luận bởi ${userName}`
+			span= `Cách đây ${time}`
+		.comment-content 
+			p= content
+
+mixin blogComments(list)
+	.blog-comments
+		h3= `BÌNH LUẬN (${list.length})`
+		each item in list
+			+blogCommentItem(item.userName, item.time, item.content)
+		+pagination

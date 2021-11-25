@@ -1,6 +1,8 @@
 .news-list {
     @include flexbox;
     @include justify-content(flex-start);
+}
+.news-item {
     .news-img {
         margin-bottom: 22px;
         overflow: hidden;

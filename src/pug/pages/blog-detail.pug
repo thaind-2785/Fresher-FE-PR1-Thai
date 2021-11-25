@@ -1,0 +1,26 @@
+extends ../layouts/layout
+
+block content
+	.main-blog-detail.main-content 
+		section.direction
+			+breadcrumb(blogsBreadcrumbItems)
+		section.blog-detail-heading
+			+sectionHeader("BLOG")
+		section.blog-detail-content
+			.row.g-5
+				.blog-category.col-12.col-lg-3
+					h3 BÀI VIẾT MỚI NHẤT 
+					+newBlogList(newBlogList)
+					h3 BLOG TAGS
+					+categoryTags(tagsProducts)
+					h3 LASTEST VIDEO
+				.blog-content.col-12.col-lg-9
+					- const { title, author, date, comments, desc, img } = blogDetailItem
+					+newsItem(title, author, date, comments, desc, img)
+					form.form(action="#").blog-comment-form
+						h3 ĐÓNG GÓP Ý KIẾN
+						+formGroup({ type: "text", name: "blog-comment-name", id: "blog-comment-name", label: "Tên *" })
+						+formGroup({ type: "email", name: "email", id: "email", label: "Email *" })
+						+formGroup({ type: "textarea", name: "subject", id: "subject", label: "Ý kiến *" })
+						+formGroup({ type: "submit", label: "GỬI Ý KIẾN" })
+					+blogComments(commentList)
