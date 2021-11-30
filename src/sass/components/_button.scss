@@ -52,11 +52,16 @@
         padding: 8px 15px;
         @include flexbox;
     }
-    @include Responsive(SM) {
-        font-size: 1.6rem;
-        min-height: 40px;
+    &.btn-update-address {
+        background-color: $addressBtnColor;
+        color: white;
+        height: 30px;
     }
     &:hover {
         background-color: $textHoverColor;
+    }
+    @include Responsive(SM) {
+        font-size: 1.6rem;
+        min-height: 40px;
     }
 }

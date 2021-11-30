@@ -16,12 +16,21 @@
                 font-size: 1.7rem;
             }
         }
-        input, textarea {
+        input, textarea, select {
             background-color: $tableBackground;
             border: $borderDefault;
             height: 40px;
             font-size: 1.4rem;
+            padding-left: 10px;
             @include flex(1);
+        }
+        input[type=checkbox] {
+            margin: 0 10px 0px 100px;
+            @include flex(unset);
+            @include Responsive(XS) {
+                width: unset;
+                margin-left: 0;
+            }
         }
         textarea {
             height: 160px;
@@ -80,14 +89,6 @@
             @include Responsive(XS) {
                 @include flex-direction(row);
             }
-            input[type=checkbox] {
-                margin: 0 10px 0px 100px;
-                @include flex(unset);
-                @include Responsive(XS) {
-                    width: unset;
-                    margin-left: 0;
-                }
-            }
             label {
                 width: unset;
                 @include Responsive(XS) {
@@ -121,6 +122,74 @@
         }
         h3 {
             margin-bottom: 12px;
+        }
+    }
+    &.address-form {
+        padding-bottom: 30px;
+        margin-top: 30px;
+        .form-group:last-child {
+            margin-bottom: 0;
+            button[type=submit] {
+                width: 160px;
+                margin-right: 10px;
+            }
+            button {
+                font-size: 1.6rem;
+            }
+            @include Responsive(XS) {
+                @include flex-direction(row)
+            }
+        }
+        .form-group:nth-of-type(9) {
+            margin-bottom: 22px;
+            @include align-items(center);
+            @include Responsive(XS) {
+                @include flex-direction(row);
+            }
+            label {
+                width: unset;
+                @include Responsive(XS) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .form-group {
+            &.label-xs-width-unset {
+                @include Responsive(XS) {
+                    label {
+                        width: unset;
+                    }
+                }
+            }
+            input, select {
+                background-color: white;
+                font-size: 1.6rem;
+            }
+            a {
+                font-size: 1.8rem;
+                text-decoration: underline;
+                color: $addressBtnColor;
+            }
+            label {
+                color: $addressFormColor;
+            }
+            select {
+                @include Responsive(XS) {
+                    @include flex(unset);
+                    width: 100%;
+                }
+            }
+        }
+        &--disable {
+            .form-group:last-child {
+                margin-bottom: 0;
+                @include justify-content(flex-end);
+            }
+            input {
+                border: none;
+                color: $addressFormColor;
+                background-color: $tableBackground !important;
+            }
         }
     }
 }

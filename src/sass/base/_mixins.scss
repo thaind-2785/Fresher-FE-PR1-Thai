@@ -125,14 +125,14 @@ $XL: 1200px;  //desktop
 	@else if $canvas == LTAB {
 		@media only screen and (min-width: ($SM + 1px)) and (max-width: $MD) { @content; } 
 	}
-	@else if $canvas == LG {
-		@media only screen and (max-width: $LG) { @content; } 
-	}
 	@else if $canvas == MD {
 		@media only screen and (max-width: $MD) { @content; } 
 	}
 	@else if $canvas == mMD {
 		@media only screen and (min-width: $MD) { @content; } 
+	}
+	@else if $canvas == smallDesktop {
+		@media only screen and (max-width: $LG) { @content; } 
 	}
 	@else if $canvas == desktop {
 		@media only screen and (max-width: $XL) { @content; } 

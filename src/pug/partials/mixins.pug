@@ -103,19 +103,9 @@ mixin subNavItem(text)
 	li.header-sub-item
 		a(href="products.html")= text
 					
-mixin userNavItem(text, state)
+mixin userNavItem({ path, title })
 	li.user-item 
-		case text 
-			when "Giỏ hàng"
-				a.user-link(href="cart.html")= text
-			when "Trạng thái đơn hàng"
-				a.user-link(href="orders.html")= text
-			when "Đăng nhập"
-				a.user-link(href="login.html")= text
-			when "Đăng ký"
-				a.user-link(href="signup.html")= text
-			default 
-				a.user-link(href="javascript:void(0)")= text
+		a.user-link(href= path)= title
 
 mixin dropDownList(list)
 	ul.header-subnav-list
@@ -148,8 +138,9 @@ mixin newsItem(title, author, date, comments, desc, img, itemClass)
 
 mixin newsList(list)
 	.news-list.row.g-5
-		each val in list 
-			+newsItem(val.title, val.author, val.date, val.comments, val.desc, val.img, val.itemClass)
+		each val in list
+			- const { title, author, date, comments, desc, img, itemClass } = val
+			+newsItem(title, author, date, comments, desc, img, itemClass)
 
 mixin commentItem 
 	.comment-item
@@ -321,6 +312,7 @@ mixin tabPanes(list)
 				.tab-pane(id= item.tabpaneId, role="tabpanel", aria-labelledby= item.tabId)
 					if item.content
 						p= item.content
+
 mixin orderNav(list)
 	ul
 		each val in list
@@ -345,3 +337,58 @@ mixin orderContentList(list)
 			td
 				span= state
 			td Chi tiết
+
+mixin addressForm({ list, isDisable, type })
+	if isDisable
+		form.form.address-form.address-form--disable
+			each item in list
+				- const { id, value, label } = item
+				case id
+					when "surname"
+					when "zipcode"
+						.form-group.label-xs-width-unset
+							label(for= id)= label
+							input(type="text" id= id, name= id, value= value, disabled)
+					default
+						.form-group
+							label(for= id)= label
+							input(type="text" id= id, name= id, value= value, disabled)
+			.form-group
+				a(href="javascript:void(0)") Chỉnh sửa địa chỉ
+	else
+		form.form.address-form
+			each item in list
+				- const { id, value, label } = item
+				case id
+					when "surname"
+					when "zipcode"
+						.form-group.label-xs-width-unset
+							label(for= id)= label
+							input(type="text" id= id, name= id, value= value)
+					when "city"
+						.form-group
+							label(for= id)= label
+							select(id= id, name= id, value= value)
+								option(value= "Hà Nộ") Hà Nội
+								option(value= "Hồ Chí Minh") Hồ Chí Minh
+								option(value= "Đà Nẵng") Đà Nẵng
+					when "nationality"
+						.form-group
+							label(for= id)= label
+							select(id= id, name= id, value= value)
+								option(value= "Việt Nam") Việt Nam
+								option(value= "Khác") Khác
+					default
+						.form-group
+							label(for= id)= label
+							input(type="text" id= id, name= id, value= value)
+			.form-group
+				input(type="checkbox" id="set-defaul-address")
+				label(for="set-defaul-address") Đặt làm địa chỉ mặc định?
+			.form-group
+				if type == "add"
+					button(type="submit" class="btn btn-update-address") Cập nhật địa chỉ
+					button(class="btn btn-default") Thoát
+				else
+					button(type="submit" class="btn btn-update-address") Chỉnh sửa địa chỉ
+					button(class="btn btn-default") Xóa
