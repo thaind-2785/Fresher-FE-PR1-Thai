@@ -172,4 +172,28 @@
             }
         }
     }
+    &.blog-comment-form {
+        margin-top: 50px;
+        h3 {
+            font-style: italic;
+            margin-bottom: 20px;
+            @include Responsive(SM) {
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
+        }
+        label {
+            font-style: italic;
+            width: 60px;
+            @include Responsive(SM) {
+                font-size: 1.6rem;
+            }
+        }
+        button[type=submit] {
+            margin-left: 60px;
+            @include Responsive(XS) {
+                margin-left: 0;
+            }
+        }
+    }
 }
