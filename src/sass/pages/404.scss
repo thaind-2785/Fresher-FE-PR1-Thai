@@ -1,0 +1,46 @@
+.error-page {
+    height: 100vh;
+    @include flexbox;
+    @include flex-direction(column);
+    & > img {
+        width: 100%;
+    }
+    .error-page-option {
+        @include flexbox;
+        @include Responsive(XS) {
+            @include flex-direction(column)
+        }
+        ul {
+            @include flexbox;
+            li {
+                margin-right: 35px;
+                &:last-child {
+                    border: $borderDefault;
+                    height: 30px;
+                    padding-left: 6px;
+                    @include Responsive(XS) {
+                        margin-right: 0px;
+                    }
+                }
+                input {
+                    border: none;
+                    outline: none;
+                    height: 100%;
+                    background-color: transparent;
+                }
+            }
+            a {
+                color: black;
+                text-decoration: underline;
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .black-logo {
+        margin-right: 100px;
+        @include Responsive(XS) {
+            margin-right: 0px;
+            margin-bottom: 15px;
+        }
+    }
+}
